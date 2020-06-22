@@ -1,0 +1,29 @@
+[user]
+	name = Sergio David
+	email = sdmunozsierra@miners.utep.edu
+	signingkey = 0CB4F8D95213EF2B
+[core]
+	editor = vim
+[credential]
+        # helper = cache --timeout=3600
+        helper = /usr/lib/git-core/git-credential-libsecret
+[gpg]
+	program = gpg
+[commit]
+	# Show diff when preparing commit message
+	verbose = true
+	template = ~/.gitmessage
+[alias]
+	unstage = reset HEAD --
+    st = status
+    co = checkout
+    br = branch
+    aa = add .
+	comm = commit -S -m
+    comn = !"f() { message=\"#$(git rev-parse --abbrev-ref HEAD | cut -d \"-\" -f1) : $1\"; git commit -m \"$message\"; }; f"
+    last = log -1 HEAD
+    recomm = reset --soft HEAD~1
+    uncommit = reset --soft HEAD~1
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
