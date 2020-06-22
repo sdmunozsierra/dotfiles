@@ -1,614 +1,3 @@
-ping 8.8.8.8
-cd .config/
-ls
-cd polybar/
-ls
-vim config 
-polybar
-polybar main
-polybar -c config
-polybar main
-polybar main &
-cat config 
-vim config 
-ls
-cp config config.bak
-vim config
-dd
-ee
-pavucontrol 
-polybar main
-startx
-ls
-la
-source /usr/share/LS_COLORS/dircolors.sh 
-ls
-la
-vim .xinitrc 
-la
-cd /etc/xdg/
-ls
-cd autostart/
-ls
-cd..
-xdg
-cd
-vim .config/
-cd .config/
-ls
-la
-rmdir xpad
-cd /etc/
-ls
-vim bash.bash_logout 
-la
-vim bash.bashrc 
-ls
-cd bash_completion.d/
-ls
-cd..
-ls
-cd X11/
-ls
-cd xinit/
-ls
-vim xinitrc
-ls
-cd xinitrc.d/
-ls
-cd..
-ls
-mv xinitrc xinitrc.bak
-sudo mv xinitrc xinitrc.bak
-cd..
-ls
-cd..
-ls
-startx
-cd 
-startx
-vim .bash_profile 
-vim .Xresources
-ls
-cp .Xresources .Xresources.bak
-vim .Xresources
-cd .config/polybar/
-ls
-vim config
-ping 8.8.8.8
-sudo pacman -Sy
-ping 8.8.8.8
-im
-vim
-st
-st-term
-st
-whereis st
-pacman -Rs | grep st
-sudo pacman -Rs | grep st
-sudo pacman -Qe | grep st
-man st
-source .config/i3/config
-screen
-ls /usr/share/terminfo/x/
-x10term
-xfce
-$TERM
-echo $TERM
-cd .vim
-ls
-cd..
-vim .vimrc 
-reloadx
-cdg
-ls
-cd st-xresources/
-ls
-cd..
-ls
-cdg
-ls
-cd st
-ls
-vim config.mk 
-cd..
-ls
-cd st-xresources/
-ls
-cd..
-ls
-cd HackerRank/
-ls
-cd..
-cd hackerrank-solutions/
-ls
-cd interview_preparation_kit/
-ls
-cd warm_up_callenges/
-ls
-cd...
-cd..
-rm -rf hackerrank-solutions/
-ls
-cd deleteme/
-ls
-cd..
-rmdir deleteme/
-rm -rf deleteme/
-sudo rm -rf deleteme/
-plase
-ls
-reload
-reloadx
-ls /usr/share/terminfo/x/
-$USER
-$USERDIR
-$USER
-echo $USER
-echo /home/$USER
-cd .local/
-ls
-cd bin/
-ls
-bench
-chardetect
-honcho
-virtualenv
-cd..
-cd .gem/
-ls
-cd ruby/
-ls
-cd /usr/lib/jvm/
-ls
-cd default
-ls
-cd bin/
-ls
-cd..
-ls
-cdll
-cd..
-ls
-cd java-13-openjdk/
-ls
-cd /usr/bin/site_perl/
-ls
-la
-cd..
-la
-cd /usr/bin/site_perl/
-la
-cd /usr/bin/vendor_perl/
-ls
-cd /opt/
-ls
-cd arch32/
-ls
-cd..
-ls
-whereis st
-cd /usr/local/
-ls
-cd bin/
-ls
-mujtest
-./mujstest 
-./st
-ls
-st-copyout 
-cd
-source .bashrc 
-ls /usr/share/terminfo/
-ls /usr/share/terminfo/x
-echo $TERMINFO
-echo $TERM
-vim
-exot
-ee
-vim .bashrc 
-ee
-ip
-ip link
-ip link wlp3s0
-vim 
-terminfo
-startx
-reboot
-reloadx
-reload
-ls
-la
-ee
-reload
-ee
-cdg
-ls
-cd st-xresources/
-ls
-make clean install
-sudo make clean install
-ls
-vim README 
-cd..
-ls
-cd st
-ls
-make clean install
-please
-man fc
-sudo make clean install
-tic -s st.info 
-please
-ee
-xst -e vim .bash_aliases 
-export TERM=xst;
-xst -e vim .bash_aliases 
-export TERM=st-term;
-xst -e vim .bash_aliases 
-export TERM=st-term;
-xst -e vim .bash_aliases 
-export TERM=st-term
-xst -e vim .bash_aliases 
-xst -e vim
-export TERM=xst
-ee
-xst -e vim
-ee
-please
-vim .bash_aliases 
-echo $TERM
-xst -e vim
-ls
-cdg
-ls
-cd xst/
-ls
-git pull
-git stash
-git pull
-ls
-vim Re
-vim README.md 
-ls
-cd src/
-ls
-cd..
-ls
-man tic
-ee
-st-term
-whereis st
-sudo pacman -Qe| grep st
-xst-git
-xst
-xst -e python
-xst -e vim
-pacman -S vim
-please
-vim .bash_aliases 
-source .bash_aliases 
-please
-pacman -S vim
-please
- la
-ll
-l
-lss
-vim
-xst 
-man xst
-yay -S xst
-xst
-ee
-xst -e vim 
-ee
-xst -e vim
-reloadx
-xst -e vim
-reloadx
-xst -e vim
-reloadx
-ee
-reloadx
-ee
-la ls
-ls
-la
-vim
-ee
-reloadx
-ee
-la
-pwd
-vim .ssh/
-ee
-echo "Pretty huh heh?"
-cdg
-ls
-cd..
-ls
-cdg
-ls
-cd xst/
-ls
-cd src/
-cd..
-vim Makefile 
-reloadx
-cdg
-ls
-cd xst/
-ls
-vim Makefile 
-ee
-ls
-la
-pwd
-reloadx
-vim .ssh/
-reloadx
-ee
-vim .Xresources
-vim .bash_aliases 
-reloadx
-ee
-ll
-ee
-reloadx
-ee
-reloadx
-ee
-vim .bash_aliases 
-ee
-reloadx
-ee
-ls
-pwd
-ee
-pwd
-vim .bash_aliases 
-source .bashrc 
-ls
-echo "$LS_COLORS
-"
-echo $LS_COLORS
-reloadrx
-reloadrc
-ls
-cd Data/
-ls
-cd..
-ls
-dir
-reloadrc
-dir
-ls
-vdir
-reloadrx
-reloadrc
-vdir
-reloadrc
-ls
-cd Data/
-ls
-cd Git/
-ls
-cd ai
-ls
-cd finalproj/
-ls
-cd src/
-ls
-cd games/
-ls
-reloadrc
-ls
-cd..
-ls
-cd..
-ls
-cd..
-ls
-cd
-ls
-reloadrc
-ls
-yay -S lscolors-git
-reloadrc
-ls
-cd Data/
-ls
-cd..
-cdg
-ls
-cd ai
-ls
-cd..
-cd st-xresources/
-ls
-cd patches/
-ls
-cd.
-cd..
-ls
-vim Makefile 
-ee
-ls
-la
-ls
-reload
-ee
-ls
-ee
-vim .bash_aliases 
-ee
-ls
-ee
-ls
-reloadrc
-ls
-reloadrc
-ls
-pwd
-source .bashrc
-ls
-cd Data/
-ls
-cd /usr/share/LS_COLORS/
-ls
-./ dircolors.sh 
-. dircolors.sh 
-ls
-vim dircolors.sh 
-vim LS_COLORS 
-reloadrc
-ls
-reloadx
-ls
-reloadrc
-ls
-reload
-ls
-reloadrc
-ls
-clear
-ls
-. dircolors.sh 
-ls
-reload
-ls
-reloadrc
-ls
-reloadrc
-ls
-. dircolors.sh 
-source .dircolors.sh
-ee
-ls
-la
-reloadrc
-ls
-echo $LSCOLORS
-echo $LS_COLORS
-ls
-vdir
-dir
-LSS
-ee
-ls
-reload
-ls
-dir
-vdir
-ls
-cd Data/
-ls
-cd..
-ls
-cdg
-ls
-cd st-xresources/
-ls
-ee
-ls | grep a
-ee
-reloadrc
-ls
-ls grep | a
-ls | grep a
-ll
-dir
-la
-ls -d .*
-la
-reloadrx
-reloadrc
-ls
-la
-cd..
-ls
-cd keanue/
-ls
-cdg
-ls
-cd st-xresources/
-ls
-cd..
-ls
-ee
-ls
-reloadrc
-ls
-cdg
-ls
-cd st-xresources/
-ls
-reloadrc
-ls
-reloadrc
-ls
-reloadrc
-ls
-cdg
-ls
-pwd
-cd..
-ls
-cd..
-ls
-cdg
-cd st
-ls
-cdg
-ls
-ee
-ls
-su
-vim .bash_aliases 
-vim .bash_profile 
-vim .bashrc 
-ee
-vim .Xresources
-ee
-whereis s
-whereis st
-whereis xst
-xst
-cd .config/i3/
-vim config
-reloadx
-reload
-ls
-vim config
-cd
-vim .vimrc 
-ee
-startx
-ip addr
-ping 8.8.8.8
-pacman -Syu
-please
-pacman -Syu
-please
-sudo pacman -Rdd libdmx libxxf86dga && pacman -Syu
-sudo pacman -Rdd libdmx libxxf86dga && sudo pacman -Syu
-sudo pacman -Syu
-reboot
-reload
-cdg
-cpwd
-cdwd
-vim .bashrc 
-vim .bash_profile 
-ee
-ee
-man escrotum
-ee
-man strftime2
-man strftime(2)
-man 2 strftime
-man2 strftime
 man strftime
 source .bash_aliases 
 reload
@@ -1481,7 +870,7 @@ git push -v
 git pull
 git push
 gitBackup
-:q
+
 ee
 la
 vim .gnupg/gpg.conf
@@ -1571,3 +960,111 @@ cdg
 ls
 cd fluxion/
 cpwd
+cdg
+cd dotfiles/
+git remote set-url origin git@github.com:sdmunozsierra/dotfiles.git
+ls
+cd..
+ls
+cd c-tokenizer/
+ls
+git pull
+git remote -v
+git pull
+ssh-add
+git pull
+ee
+git st
+git co heads/origin/office
+ls
+git co development
+git co origin/laptop
+git co office
+git pull
+ls
+cd config
+ls
+cat test_results.txt
+\:q
+ls
+rm test_results.txt
+git stash
+git stash drop
+ls
+cd..
+ls
+cd ou
+ls
+cd co
+vim config
+ee
+cdg
+cd dotfiles/
+git status
+git config
+git config get-all
+git config --get-all
+git config --global
+git push
+git uncommit
+git st
+git aa
+git comm "Removed STRING error"
+git push
+git config --global url.ssh://git@github.com/.insteadOf https://github.com
+git pull
+git config --global url.ssh://sdmunozsierra@github.com/.insteadOf https://github.com
+git pull
+git config --global url.ssh://git@github.com/.insteadOf https://github.com
+cd
+vim .gitconfig
+git st
+cdg
+cd dotfiles/
+git st
+git push
+sl
+ls
+cd notes/
+ls
+cd..
+ls
+cd config/
+ls
+rm pkill 
+rm stale_outputs_checked 
+rm exclude-list.txt.bak 
+cd..
+ls
+cd ArchScripts/
+ls
+cd PostInstallScripts/
+l
+cd..
+ls
+git st
+git aa
+git comm "removed unused"
+git push
+ls
+cd..
+ls
+git st
+z
+ee
+yay -S tusk
+yay -S remarkable
+ls
+yay -S typora
+cdd
+cd Git/dotfiles/ArchScripts/
+ls
+git st
+git co laptop 
+sudo pip install github-cli
+ee
+ghi list 
+ghi list -s open
+ghi -v
+sudo pip install simplejson
+ee

@@ -183,3 +183,9 @@ temp
 .webeclipse.properties
 .wget-hsts
 *.zw*
+.zoom/
+.config/Typora/
+.config/JetBrains/
+.IntelliJ*
+.Idea*
+.config/Tusk/
