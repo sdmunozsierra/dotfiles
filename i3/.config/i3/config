@@ -1,0 +1,360 @@
+# Laptop's i3 Config File
+# Minimal lifestyle
+# Bar: i3-bar
+# Modes: Power, Rezise, Gaps, Config, Monitor
+
+##############################
+###### General Settings ######
+##############################
+
+# Mod key
+set $mod Mod4
+font pango:Gidole Nerd Font 12
+
+##############################
+######### WORKSPACE ##########
+##############################
+
+# Default layout
+workspace_layout default 
+
+# Workspace name
+set $WS0  0:Dev 
+set $WS1  1:Desktop
+set $WS2  2:Web
+set $WS3  3:Notes
+set $WS4  4:Bash
+set $WS5  5:Download
+set $WS6  6:File
+set $WS7  7:Doc
+set $WS8  8:VM
+set $WS9  9:Media
+set $WS10 10:Config
+set $WS11 11:Test
+set $WS12 12:Log
+
+# Switch to workspace
+bindsym $mod+grave workspace $WS0
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+bindsym $mod+underscore workspace $WS11
+bindsym $mod+equal workspace $WS12
+
+# Move focused container 
+bindsym $mod+Shift+grave move container to workspace $WS0
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS10
+bindsym $mod+Shift+underscore move container to workspace $WS11
+bindsym $mod+Shift+equal move container to workspace $WS12
+
+##############################
+###### GAPS AND BORDERS ###### 
+##############################
+
+# Borders 
+new_window pixel 1
+new_float  pixel 2
+
+# Gaps 
+set $default_gaps_inner 10
+set $default_gaps_outer 5
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+smart_gaps on
+smart_borders on
+
+# Set workspace specific gaps
+workspace "$WS3" gaps inner 50 
+workspace "$WS3" gaps outer 20
+workspace "$WS12" gaps inner 0
+workspace "$WS12" gaps outer 0
+
+
+##############################
+########## PROGRAMS  #########
+##############################
+
+## Set default programs
+set $browser firefox
+set $term xst 
+set $term2 urxvt -e zsh
+set $dmenuTheme -fn 'Raleway-16:bold' -nb '#141413' -nf '#f8f6f2' -sf '#141413' -sb '#ffa724' 
+
+# Start a terminal
+bindsym $mod+Return exec $term 
+bindsym $mod+Ctrl+Return exec ~/Data/ArchScripts/penejada.sh
+bindsym $mod+slash exec $term2
+
+# Start dmenu 
+bindsym $mod+d exec --no-startup-id dmenu_recent_aliases -i -p ' ' $dmenuTheme
+
+# Autostart programs
+exec_always --no-startup-id picom
+exec_always --no-startup-id xrdb -load ~/.Xresources
+exec_always --no-startup-id ~/.screenlayout/office3.sh
+exec        --no-startup-id nitrogen --restore
+exec        --no-startup-id betterlockscreen -u ~/Data/Pictures/Walls/lock.jpg
+exec        --no-startup-id $browser
+
+# Start programs
+bindsym $mod+t exec --no-startup-id pcmanfm
+bindsym $mod+n exec --no-startup-id notes; exec --no-startup-id simplenote; exec i3-msg "smartgaps current off"
+bindsym $mod+a exec python ~/Data/ArchScripts/nextfind.py
+bindsym $mod+m exec --no-startup-id $term ranger
+bindsym $mod+Ctrl+Delete exec --no-startup-id xfce4-taskmanager
+
+# Class layout
+for_window [class="Galculator"] floating enable focus
+for_window [class="mpv"] move container to workspace $WS9
+for_window [class="(?i)lxappearance"] floating enable change container layout (stacked, tabbed, toggle split)
+for_window [class="firefox"] move container to workspace $WS2
+for_window [class="notes"] move container to workspace $WS3
+
+for_window [class="simplenote"] move container to workspace $WS3 border pixel 1
+for_window [class="M(?i)Player"] move container to workspace $WS9
+for_window [class="sky"] move container to workspace $WS11 
+
+##############################
+###### AUDIO AND VIDEO #######
+##############################
+# Laptop configuration
+
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master 2%+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master 2%- unmute
+bindsym XF86AudioMute        exec amixer -q -D pulse set Master Playback Switch toggle
+bindsym XF86MonBrightnessUp exec ~/Data/Git/dotfiles/ArchScripts/brightness.sh + eDP-1
+bindsym XF86MonBrightnessDown exec ~/Data/Git/dotfiles/ArchScripts/brightness.sh - eDP-1
+bindsym XF86AudioPlay  exec mpris-ctl pp
+bindsym XF86AudioStop  exec mpris-ctl stop
+
+# Mouse wrapping when using multiple outputs (monitors)
+#mouse_warping none
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Change focus windows (Cursor Keys)
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Change focus windows (vimlike)
+bindsym $mod+h focus left
+bindsym $mod+k focus down
+bindsym $mod+j focus up
+bindsym $mod+l focus right
+
+# Move focused windows alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Move focused windows vimlike:
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+##############################
+######### LAYOUT #############
+##############################
+
+# Switch between the current and the previously focused one
+bindsym $mod+Tab workspace back_and_forth
+
+# Split in horizontal orientation
+bindsym $mod+o split h
+
+# Split in vertical orientation
+bindsym $mod+v split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Layout stacks
+bindsym $mod+s layout stacking
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Focus the parent container
+bindsym $mod+q focus parent
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m ' Do you really want to exit i3? This will end your X session.' -b 'Выход' 'i3-msg exit'"
+
+##############################
+############ MODES ###########
+##############################
+
+# Resize window mode
+bindsym $mod+r mode "resize"
+mode "resize" {
+
+        # $ressing left will shrink the window’s width.
+        bindsym h resize grow width 10 px or 10 ppt
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Move mode for floating windows
+bindsym $mod+Ctrl+m focus floating; mode "move"
+mode "move" {
+    bindsym Up move up 20px
+    bindsym Left move left 20px
+    bindsym Down move down 20px
+    bindsym Right move right 20px
+
+	# back to normal: Escape or Enter
+    bindsym Return mode "default"
+    bindsym Escape mode "default" 
+}
+
+# Power mode 
+bindsym $mod+Ctrl+p mode "power" exec "i3-nagbar -t warning -m 'Remember to exit power mode after unlock' "
+mode "power"{
+	bindsym p	exec systemctl poweroff
+	bindsym r	exec systemctl reboot
+	bindsym h 	exec gksu systemctl hibernate
+	bindsym l 	exec betterlockscreen --lock
+
+	# back to normal: Escape or Enter
+	bindsym Escape mode "default"
+	bindsym Return mode "default"
+}
+
+# Gaps mode
+bindsym $mod+Ctrl+g mode "gaps"
+mode "gaps"{
+	#enable f = false t = true
+	bindsym f exec i3-msg "smartgaps current off;gaps inner current set 0; gaps outer current set 0"
+	bindsym t exec i3-msg "smartgaps current on;gaps inner current set 10; gaps outer current set 5"
+	# on the fly adjustments
+    bindsym Up gaps  outer current  plus 5;
+    bindsym Down gaps  outer current  minus 5;
+    bindsym Right gaps  inner current  plus 5;
+    bindsym Left gaps  inner current  minus 5;
+
+	# back to normal: Escape or Enter
+	bindsym Escape mode "default"
+	bindsym Return mode "default"
+}
+
+# Config mode 
+bindsym $mod+Ctrl+c mode "config"
+mode "config"{
+	bindsym w   exec i3-msg 'exec "$term -e vim .config/i3/config" '
+	bindsym b   exec i3-msg 'exec "$term -e vim .config/i3/i3status.conf" move $WS0'
+	bindsym a   exec i3-msg 'exec "$term -e vim .bash_aliases" move $WS0'
+	bindsym v   exec i3-msg 'exec "$term -e vim .vimrc" move $WS0'
+	bindsym z   exec i3-msg 'exec "$term -e vim .zshrc" move $WS0'
+	bindsym x   exec i3-msg 'exec "$term -e vim .Xresources" move $WS0'
+	bindsym p   exec i3-msg 'exec "$term -e vim ~/Data/ArchScripts/install_programs.sh" '
+
+	# back to normal: Escape or Enter
+	bindsym Escape mode "default"
+	bindsym Return mode "default"
+}
+
+
+#############################
+###### COLOR SCHEME #########
+#############################
+
+# Xresources
+set_from_resource $background  background  
+set_from_resource $foreground  foreground  
+set_from_resource $darkblack   color0  
+set_from_resource $black       color8  
+set_from_resource $darkred     color1  
+set_from_resource $red         color9  
+set_from_resource $darkgreen   color2  
+set_from_resource $green       color10 
+set_from_resource $darkyellow  color3  
+set_from_resource $yellow      color11 
+set_from_resource $darkblue    color4  
+set_from_resource $blue        color12 
+set_from_resource $darkmagenta color5  
+set_from_resource $magenta     color13 
+set_from_resource $darkcyan    color6  
+set_from_resource $cyan        color14 
+set_from_resource $darkwhite   color7  
+set_from_resource $white       color15 
+
+set $hl magenta 
+############################
+########  COLORS ###########
+############################
+
+##class                 border     backgr.    text       indicator  child
+client.focused          $yellow    $yellow    $darkblack $darkblack $yellow
+client.focused_inactive $blue      $blue      $darkblack $red       $blue
+client.unfocused        $darkblack $darkblack $white     $red       $darkblack
+client.urgent           $red       $red       $white     $red       $red
+client.placeholder      $darkblack $darkblack $darkblack $darkblack $darkblack
+ 
+
+bar {
+    font pango:Gidole Nerd Font 14
+    id bar-0
+    position 	top
+    #status_command     ~/Data/ArchScripts/youtube_title.sh  #Youtube status 
+    #status_command 	i3status -c ~/.config/i3/i3status.conf #Simple status 
+    status_command 	i3blocks -c ~/Data/Programming/ArchScripts/i3blocks/i3blocks.conf #Block status
+    #tray_output primary #display the tray only on primary output
+    
+    strip_workspace_numbers yes
+
+    colors{
+        background $background 		#Bar Background
+        statusline $white		    #Bar Letters
+        separator  $darkblack 		#Bar Separator
+
+        			        #Margin    #Backgd    #Letters 
+        focused_workspace	$yellow    $yellow    $darkblack
+        active_workspace	$blue      $blue      $darkblack
+        inactive_workspace 	$darkblack $darkblack $white
+        urgent_workspace   	$red       $red       $darkblack
+    }	
+}

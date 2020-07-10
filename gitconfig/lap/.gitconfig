@@ -17,10 +17,11 @@
 	unstage = reset HEAD --
     st = status
     co = checkout
+    con = !"f(){ git-checkout-issue $1 $2; }; f"
     br = branch
     aa = add .
 	comm = commit -S -m
-    comn = !"f() { message=\"#$(git rev-parse --abbrev-ref HEAD | cut -d \"-\" -f1) : $1\"; git commit -m \"$message\"; }; f"
+    comn = !"f() { message=\"#$(git rev-parse --abbrev-ref HEAD | cut -d \"-\" -f1): $1\"; git commit -m \"$message\"; }; f"
     last = log -1 HEAD
     recomm = reset --soft HEAD~1
     uncommit = reset --soft HEAD~1
