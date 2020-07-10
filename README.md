@@ -12,5 +12,9 @@ stow i3
 stow vim
 
 ## Executables
+
+### Installation
 sudo stow scripts -t /usr/local/bin
 
+### Removal
+stow -D scripts/ -t /usr/local/bin

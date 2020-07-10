@@ -17,6 +17,7 @@
 	unstage = reset HEAD --
     st = status
     co = checkout
+    con = !"f(){ git-checkout-issue $1 $2; }; f"
     br = branch
     aa = add .
 	comm = commit -S -m
