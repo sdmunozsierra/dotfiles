@@ -105,7 +105,7 @@ bindsym $mod+slash exec $term2
 bindsym $mod+d exec --no-startup-id dmenu_recent_aliases -i -p ' ' $dmenuTheme
 
 # Autostart programs
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --experimental-backends --backend glx
 exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id ~/.screenlayout/office3.sh
 exec        --no-startup-id nitrogen --restore
