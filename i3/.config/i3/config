@@ -285,7 +285,7 @@ mode "gaps"{
 bindsym $mod+Ctrl+c mode "config"
 mode "config"{
 	bindsym w   exec i3-msg 'exec "$term -e vim .config/i3/config" '
-	bindsym b   exec i3-msg 'exec "$term -e vim .config/i3/i3status.conf" move $WS0'
+	bindsym b   exec i3-msg 'exec "$term -e vim .config/i3blocks/i3blocks.conf" move $WS0'
 	bindsym a   exec i3-msg 'exec "$term -e vim .bash_aliases" move $WS0'
 	bindsym v   exec i3-msg 'exec "$term -e vim .vimrc" move $WS0'
 	bindsym z   exec i3-msg 'exec "$term -e vim .zshrc" move $WS0'
@@ -339,9 +339,7 @@ bar {
     font pango:Gidole Nerd Font 14
     id bar-0
     position 	top
-    #status_command     ~/Data/ArchScripts/youtube_title.sh  #Youtube status 
-    #status_command 	i3status -c ~/.config/i3/i3status.conf #Simple status 
-    status_command 	i3blocks -c ~/Data/Programming/ArchScripts/i3blocks/i3blocks.conf #Block status
+    status_command 	    i3blocks -c ~/.config/i3blocks/i3blocks.conf
     #tray_output primary #display the tray only on primary output
     
     strip_workspace_numbers yes
