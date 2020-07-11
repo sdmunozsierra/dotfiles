@@ -1,0 +1,30 @@
+[user]
+	name = Sergio Sierra
+	email = sdmunozsierra@miners.utep.edu
+	signingkey = 8B7EB78DF340DB63
+[core]
+	editor = vim
+[credential]
+        # helper = cache --timeout=3600
+	helper = store
+[gpg]
+	program = gpg2
+[alias]
+	unstage = reset HEAD --
+	comm = commit -a -S -m
+	last = log -1 HEAD
+    st = status
+    co = checkout
+    br = branch
+    aa = add .
+
+# If having network problems i.e. behind firewall enable:
+;[url "ssh://aur@aur.archlinux.org/"]
+    ;insteadOf = https://aur.archlinux.org/
+    ;insteadOf = http://aur.archlinux.org/
+    ;insteadOf = git://aur.archlinux.org/
+
+;[url "https://github.com/"]
+    ;insteadOf = git@github.com/
+;[url "https://"]
+    ;insteadOf = git://
