@@ -30,6 +30,7 @@ alias cd......="cd ../../../../.."
 alias cdd="cd $HOME/Data/"
 alias cdg="cd $HOME/Data/Git/"
 alias cds="cd $HOME/Data/Git/springbank-metrics/"
+alias cddf="cd $HOME/dotfiles/"
 
 # change working directory (requires xclip)
 alias cpwd="pwd | xclip -r -selection secondary && echo 'pwd copied'"

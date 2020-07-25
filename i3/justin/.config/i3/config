@@ -1,4 +1,4 @@
-# Laptop's i3 Config File
+# Justin's i3 Config File
 # Minimal lifestyle
 # Bar: i3-bar
 # Modes: Power, Rezise, Gaps, Config, Monitor
@@ -92,8 +92,9 @@ workspace "$WS12" gaps outer 0
 
 ## Set default programs
 set $browser firefox
-set $term xst 
-set $term2 urxvt -e zsh
+# TODO change st to xst
+set $term st 
+set $term2 st -e zsh
 set $dmenuTheme -fn 'Raleway-16:bold' -nb '#141413' -nf '#f8f6f2' -sf '#141413' -sb '#ffa724' 
 
 # Start a terminal
@@ -107,7 +108,7 @@ bindsym $mod+d exec --no-startup-id dmenu_recent_aliases -i -p ' ' $dmenuT
 # Autostart programs
 exec_always --no-startup-id picom --experimental-backends --backend glx
 exec_always --no-startup-id xrdb -load ~/.Xresources
-exec_always --no-startup-id ~/.screenlayout/office3.sh
+exec_always --no-startup-id ~/.screenlayout/home2.sh
 exec        --no-startup-id nitrogen --restore
 exec        --no-startup-id betterlockscreen -u ~/Data/Pictures/Walls/lock.jpg
 exec        --no-startup-id $browser
@@ -133,7 +134,7 @@ for_window [class="sky"] move container to workspace $WS11
 ##############################
 ###### AUDIO AND VIDEO #######
 ##############################
-# Laptop configuration
+# Justin's configuration
 
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse set Master 2%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse set Master 2%- unmute
@@ -142,6 +143,15 @@ bindsym XF86MonBrightnessUp exec ~/Data/Git/dotfiles/ArchScripts/brightness.sh +
 bindsym XF86MonBrightnessDown exec ~/Data/Git/dotfiles/ArchScripts/brightness.sh - eDP-1
 bindsym XF86AudioPlay  exec mpris-ctl pp
 bindsym XF86AudioStop  exec mpris-ctl stop
+bindsym XF86MonBrightnessUp  exec ~/Data/Git/dotfiles/ArchScripts/brightness.sh + eDP-1
+bindsym XF86AudioPlay        exec mpris-ctl pp
+bindsym XF86AudioStop        exec mpris-ctl stop
+bindsym XF86Forward          exec mpris-ctl next
+bindsym XF86Back             exec mpris-ctl prev
+
+##############################
+####### WINDOW CONTROL #######
+##############################
 
 # Mouse wrapping when using multiple outputs (monitors)
 #mouse_warping none
@@ -337,7 +347,7 @@ client.placeholder      $darkblack $darkblack $darkblack $darkblack $darkblack
  
 
 bar {
-    font pango:Gidole Nerd Font 14
+    font pango:Arimo Nerd Font 13
     id bar-0
     position 	top
     status_command 	    i3blocks -c ~/.config/i3blocks/i3blocks.conf
