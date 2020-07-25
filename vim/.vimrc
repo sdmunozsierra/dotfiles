@@ -213,6 +213,8 @@ command! -register CopyMatches call CopyMatches(<q-reg>)
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 set hlsearch
 
+"Beautify code see gh.com/Chiel92 for specific languages
+noremap <F6> :Autoformat<CR>
 "Indent all file `mzgg=G'z`
 vmap <F7> mzgg=G`z<CR>
 
@@ -223,7 +225,7 @@ map <F12> :r !xclip -o -sel clip<CR>
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
 
-"Use ws to write as sudo
+"Use :ws to write as sudo
 cmap ws w !sudo tee > /dev/null %
 
 "Visual mode pressing * or # searches for the current selection:
@@ -239,6 +241,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+"Cycle through windows with Tab Tab
+map <Tab><Tab> <C-W>w
+map -- <C-W>w
 
 "Quick buffers
 map <leader>bd :Bclose<cr> 
