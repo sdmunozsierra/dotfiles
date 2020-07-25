@@ -1,0 +1,122 @@
+! Cobalt2
+*.foreground:  #ffffff
+*.background:  #132738
+*.cursorColor: #f0cc09
+
+! Special for polybar
+! Yellow 11 highlight
+*.highlight:     #edc809
+! Red 9 highlight
+*.error:      #f40e17
+! Blue 12 active
+*.active:     #5555ff
+! Black 12 inactive
+*.inactive:      #555555
+
+! Black
+*.color0:      #000000
+*.color8:      #555555
+!
+! Red
+*.color1:      #ff0000
+*.color9:      #f40e17
+!
+! Green
+*.color2:      #38de21
+*.color10:     #3bd01d
+!
+! Yellow
+*.color3:      #ffe50a
+*.color11:     #edc809
+!
+! Blue
+*.color4:      #1460d2
+*.color12:     #5555ff
+!
+! Magenta
+*.color5:      #ff005d
+*.color13:     #ff55ff
+!
+! Cyan
+*.color6:      #00bbbb
+*.color14:     #6ae3fa
+!
+! White
+*.color7:      #bbbbbb
+*.color15:     #ffffff
+!
+! Bold, Italic, Underline
+*.colorBD:     #f7fcff
+
+! PaperColor Theme
+!*.foreground: #4D4D4C
+!*.background: #E7E8EB
+! black
+!*.color0: #EDEDED
+!*.color8: #969694
+! red
+!*.color1: #D7005F
+!*.color9: #D7005F
+! green
+!*.color2: #718C00
+!*.color10: #718C00
+! yellow / orange
+!*.color3: #D75F00
+!*.color11: #D75F00
+! blue
+!*.color4: #4271AE
+!*.color12: #4271AE
+! magenta
+!*.color5: #8959A8
+!*.color13: #8959A8
+! cyan
+!*.color6: #3E999F
+!*.color14: #3E999F
+! white
+!*.color7: #F5F5F5
+!*.color15: #2D2D2C
+
+
+! st
+!! REQUIRED (st.shell) to avoid vim problems
+st.shell:	            /bin/bash
+st.termname:	        st-256color
+
+!! Look and Feel
+st.font:                hack nerd font-12;
+st.opacity:             235
+
+!! Cursor
+!! Available cursor values: 2 4 6 7 = █ _ | ☃ ( 1 3 5 are blinking versions)
+st.cursorshape:         3
+st.cursorthickness:     1
+st.cursorblinkstyle:    1
+st.blinktimeout: 500
+
+st.bold_font:	        2
+st.prompt_char:         $
+!st.bellvolume:	        100 
+
+
+!! URxvt
+URxvt.cursorBlink: 1
+!! Appearance
+URxvt.termName:   rxvt-unicode
+URxvt.scrollBar:  false
+Xft.dpi:          96
+Xft.antialias:    true
+Xft.rgba:      	  rgb
+Xft.hinting:      true
+Xft.hintstyle:    hintslight
+!! Transparency settings
+URxvt.transparent:     true
+URxvt.shading:         15
+URxvt.depth:           32
+!! URxvt.inheritPixmap: true
+!! Fonts
+URxvt.font:        xft:hack:pixelsize=14:antialias=true,xft:monospace
+URxvt.boldFont:    xft:hack:pixelsize=14:weight=bold:antialias=true,xft:monospace
+URxvt.letterSpace: 7
+!! Larger history limit
+URxvt.saveLines:  1000000
+
