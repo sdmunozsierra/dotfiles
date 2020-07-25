@@ -111,6 +111,7 @@ exec_always --no-startup-id ~/.screenlayout/office3.sh
 exec        --no-startup-id nitrogen --restore
 exec        --no-startup-id betterlockscreen -u ~/Data/Pictures/Walls/lock.jpg
 exec        --no-startup-id $browser
+exec_always --no-startup-id redshift-gtk
 
 # Start programs
 bindsym $mod+t exec --no-startup-id pcmanfm
@@ -123,11 +124,10 @@ bindsym $mod+Ctrl+Delete exec --no-startup-id xfce4-taskmanager
 for_window [class="Galculator"] floating enable focus
 for_window [class="mpv"] move container to workspace $WS9
 for_window [class="(?i)lxappearance"] floating enable change container layout (stacked, tabbed, toggle split)
-for_window [class="firefox"] move container to workspace $WS2
+for_window [class="(?i)firefox"] move container to workspace $WS2
 for_window [class="notes"] move container to workspace $WS3
-
 for_window [class="simplenote"] move container to workspace $WS3 border pixel 1
-for_window [class="M(?i)Player"] move container to workspace $WS9
+for_window [class="(?i)M(?i)Player"] move container to workspace $WS9
 for_window [class="sky"] move container to workspace $WS11 
 
 ##############################
@@ -291,6 +291,7 @@ mode "config"{
 	bindsym z   exec i3-msg 'exec "$term -e vim .zshrc" move $WS0'
 	bindsym x   exec i3-msg 'exec "$term -e vim .Xresources" move $WS0'
 	bindsym p   exec i3-msg 'exec "$term -e vim ~/Data/ArchScripts/install_programs.sh" '
+	bindsym d   exec i3-msg 'exec "$term2 -e cd  ~/dotfiles/'
 
 	# back to normal: Escape or Enter
 	bindsym Escape mode "default"
