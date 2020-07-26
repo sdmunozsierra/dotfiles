@@ -24,7 +24,7 @@ set $WS1  1:Desktop
 set $WS2  2:Web
 set $WS3  3:Notes
 set $WS4  4:Bash
-set $WS5  5:Download
+set $WS5  5:Git
 set $WS6  6:File
 set $WS7  7:Doc
 set $WS8  8:VM
@@ -118,17 +118,20 @@ bindsym $mod+t exec --no-startup-id pcmanfm
 bindsym $mod+n exec --no-startup-id notes; exec --no-startup-id simplenote; exec i3-msg "smartgaps current off"
 bindsym $mod+a exec python ~/Data/ArchScripts/nextfind.py
 bindsym $mod+m exec --no-startup-id $term ranger
+bindsym $mod+p exec --no-startup-id seahorse; exec --no-startup-id qtpass
 bindsym $mod+Ctrl+Delete exec --no-startup-id xfce4-taskmanager
 
 # Class layout
-for_window [class="Galculator"] floating enable focus
-for_window [class="mpv"] move container to workspace $WS9
+for_window [class="Galculator"]       floating enable focus
+for_window [class="mpv"]              move container to workspace $WS9
 for_window [class="(?i)lxappearance"] floating enable change container layout (stacked, tabbed, toggle split)
-for_window [class="(?i)firefox"] move container to workspace $WS2
-for_window [class="notes"] move container to workspace $WS3
-for_window [class="simplenote"] move container to workspace $WS3 border pixel 1
-for_window [class="(?i)M(?i)Player"] move container to workspace $WS9
-for_window [class="sky"] move container to workspace $WS11 
+for_window [class="(?i)firefox"]      move container to workspace $WS2
+for_window [class="notes"]            move container to workspace $WS3
+for_window [class="simplenote"]       move container to workspace $WS3 border pixel 1
+for_window [class="(?i)m(?i)player"]  move container to workspace $WS9
+for_window [class="sky"]              move container to workspace $WS11 
+for_window [class="(?i)seahorse"]     floating enable focus
+for_window [class="(?i)qtpass"]       floating enable focus
 
 ##############################
 ###### AUDIO AND VIDEO #######
