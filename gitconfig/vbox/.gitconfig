@@ -1,11 +1,11 @@
 [user]
-	name = Sergio Sierra
+	name = Sergio David Munoz
 	email = sdmunozsierra@miners.utep.edu
-	signingkey = 8B7EB78DF340DB63
+	signingkey = 257CA5163D8B70F1
 [core]
 	editor = vim
 [credential]
-	helper = libsecret
+	helper = seahorse
 [gpg]
 	program = gpg2
 [alias]
