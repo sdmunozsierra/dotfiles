@@ -29,7 +29,7 @@ alias cd.....="cd ../../../.."
 alias cd......="cd ../../../../.."
 alias cdd="cd $HOME/Data/"
 alias cdg="cd $HOME/Data/Git/"
-alias cds="cd $HOME/Data/Git/springbank-metrics/"
+alias cdp="cd $HOME/Data/Git/python-prototype/"
 alias cddf="cd $HOME/dotfiles/"
 
 # change working directory (requires xclip)
