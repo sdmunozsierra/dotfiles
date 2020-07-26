@@ -103,7 +103,7 @@ bindsym $mod+Ctrl+Return exec ~/Data/ArchScripts/penejada.sh
 bindsym $mod+slash exec $term2
 
 # Start dmenu 
-bindsym $mod+d exec --no-startup-id dmenu_recent_aliases -i -p ' ' $dmenuTheme
+bindsym $mod+d exec --no-startup-id dmenu-recent-aliases -i -p ' ' $dmenuTheme
 
 # Autostart programs
 exec_always --no-startup-id picom --experimental-backends --backend glx
@@ -112,7 +112,7 @@ exec_always --no-startup-id ~/.screenlayout/home2.sh
 exec        --no-startup-id nitrogen --restore
 exec        --no-startup-id betterlockscreen -u ~/Data/Pictures/Walls/lock.jpg
 exec        --no-startup-id $browser
-exec_always --no-startup-id redshift-gtk
+exec        --no-startup-id redshift-gtk
 
 # Start programs
 bindsym $mod+t exec --no-startup-id pcmanfm
@@ -130,6 +130,7 @@ for_window [class="notes"] move container to workspace $WS3
 for_window [class="simplenote"] move container to workspace $WS3 border pixel 1
 for_window [class="(?i)M(?i)Player"] move container to workspace $WS9
 for_window [class="sky"] move container to workspace $WS11 
+#for_window [class="^jetbrains-idea$"] floating enable, focus
 
 ##############################
 ###### AUDIO AND VIDEO #######
@@ -143,9 +144,6 @@ bindsym XF86MonBrightnessUp exec ~/Data/Git/dotfiles/ArchScripts/brightness.sh +
 bindsym XF86MonBrightnessDown exec ~/Data/Git/dotfiles/ArchScripts/brightness.sh - eDP-1
 bindsym XF86AudioPlay  exec mpris-ctl pp
 bindsym XF86AudioStop  exec mpris-ctl stop
-bindsym XF86MonBrightnessUp  exec ~/Data/Git/dotfiles/ArchScripts/brightness.sh + eDP-1
-bindsym XF86AudioPlay        exec mpris-ctl pp
-bindsym XF86AudioStop        exec mpris-ctl stop
 bindsym XF86Forward          exec mpris-ctl next
 bindsym XF86Back             exec mpris-ctl prev
 
