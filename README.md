@@ -14,14 +14,15 @@ stow bashrc
 stow vim
 
 ## Profile Specific Programs
-# stow i3  # Before Test before removing
-# TODO TEST
+### Ed
 stow gitconfig/lap -t ~   # ~.gitconfig
 stow i3/lap -t ~          # ~.config/i3/config
-
-### Justin i3
-#### ~.config/i3/config
+### Justin
+cd zshrc && stow justin -t ~    # ~.zshrc
 cd i3/justin && stow .config -t ~/.config  
+### Off
+stow gitconfig/off -t ~   # ~.gitconfig
+cd zshrc && stow off -t ~ # ~.zshrc
 
 ## Executables
 

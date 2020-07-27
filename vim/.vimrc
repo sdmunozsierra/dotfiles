@@ -20,6 +20,8 @@ Plugin 'chase/focuspoint-vim'
 Plugin 'ajh17/spacegray.vim'
 "Plugin 'severin-lemaignan/vim-minimap' "Still alpha
 " -- Tools -- "
+Plugin 'tpope/vim-surround'
+Plugin 'tommcdo/vim-exchange'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'Valloric/YouCompleteMe' "run ./install.py if disconnection
 Plugin 'scrooloose/syntastic'
@@ -32,15 +34,15 @@ Plugin 'ryanoasis/vim-devicons'
 "Plugin 'https://github.com/python-mode/python-mode.git'
 "Plugin 'https://github.com/plytophogy/vim-virtualenv.git'
 " -- C Programming -- "
-Plugin 'vim-scripts/Conque-GDB'
-Plugin 'c.vim'
+"Plugin 'vim-scripts/Conque-GDB'
+"Plugin 'c.vim'
 " -- Smart Contract -- "
 "Plugin 'tomlion/vim-solidity'
 " -- JS & Angular Dev -- "
 "Plugin 'burnettk/vim-angular'
-Plugin 'https://github.com/pangloss/vim-javascript'
-Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
-Plugin 'alvan/vim-closetag'
+"Plugin 'https://github.com/pangloss/vim-javascript'
+"Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
+"Plugin 'alvan/vim-closetag'
 call vundle#end() 
 " To ignore plugin indent changes, instead use:
 filetype plugin indent on
@@ -242,15 +244,22 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"Cycle through windows with Tab Tab
+"Move to last visited split
+nnoremap -- <C-W><C-W>
 map <Tab><Tab> <C-W>w
-map -- <C-W>w
 
 "Quick buffers
-map <leader>bd :Bclose<cr> 
+map <leader>bd :bd<cr> 
 map <leader>bn :bnext<cr>
 map <leader>bp :bprev<cr>
 nnoremap gb :ls<CR>:b<Space>
+
+map ]q :cnext<CR>
+map [q :cprevious<CR>
+map ]b :bnext<CR>
+map [b :bprevious<CR>
+map ]t :tabnext<CR>
+map [t :tabprevious<CR>
 
 "Jump to mark to return to last extension used
 augroup VIMRC
@@ -264,6 +273,12 @@ augroup END
 " Pressing Alt o will insert new line without insert mode FIX YOUR TERM
 " nnoremap <silent><o-o> :set paste<CR>m`o<Esc>``:set nopaste<CR>
 " nnoremap <silent><O-O> :set paste<CR>m`O<Esc>``:set nopaste<CR>
+
+" Pressing oo or OO will insert new line without insert mode.
+nmap oo o<Esc>k
+nmap OO O<Esc>j
+" This makes faster going into insert mode
+set timeoutlen=200
 
 " Shell current line insert (magik)
 :noremap Q !!$SHELL<CR>

@@ -146,6 +146,10 @@ bindsym XF86MonBrightnessDown exec ~/Data/Git/dotfiles/ArchScripts/brightness.sh
 bindsym XF86AudioPlay  exec mpris-ctl pp
 bindsym XF86AudioStop  exec mpris-ctl stop
 
+##############################
+####### WINDOW CONTROL #######
+##############################
+
 # Mouse wrapping when using multiple outputs (monitors)
 #mouse_warping none
 
@@ -254,6 +258,19 @@ mode "move" {
     bindsym Escape mode "default" 
 }
 
+# Move a workspace to another monitor (multi monitor setup)
+bindsym $mod+Ctrl+o mode "move_workspace"
+mode "move_workspace" {
+    bindsym Up move workspace to output up
+    bindsym Down move workspace to output down
+    bindsym Left move workspace to output left
+    bindsym Right move workspace to output right
+
+	# back to normal: Escape or Enter
+    bindsym Return mode "default"
+    bindsym Escape mode "default" 
+}
+
 # Power mode 
 bindsym $mod+Ctrl+p mode "power" exec "i3-nagbar -t warning -m 'Remember to exit power mode after unlock' "
 mode "power"{
@@ -343,17 +360,15 @@ bar {
     font pango:Gidole Nerd Font 14
     id bar-0
     position 	top
-    status_command 	    i3blocks -c ~/.config/i3blocks/i3blocks.conf
-    #tray_output primary #display the tray only on primary output
+    status_command 	i3blocks -c ~/.config/i3blocks/i3blocks.conf
     
+    #tray_output primary #display the tray only on primary output
     strip_workspace_numbers yes
 
     colors{
         background $background 		#Bar Background
         statusline $white		    #Bar Letters
         separator  $darkblack 		#Bar Separator
-
-        			        #Margin    #Backgd    #Letters 
         focused_workspace	$yellow    $yellow    $darkblack
         active_workspace	$blue      $blue      $darkblack
         inactive_workspace 	$darkblack $darkblack $white
