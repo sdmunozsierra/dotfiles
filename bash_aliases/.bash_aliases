@@ -29,6 +29,7 @@ alias cd.....="cd ../../../.."
 alias cd......="cd ../../../../.."
 alias cdd="cd $HOME/Data/"
 alias cdg="cd $HOME/Data/Git/"
+alias cds="cd $HOME/Data/Git/Springbank/mapviewer-backend/"
 alias cdp="cd $HOME/Data/Git/python-prototype/"
 alias cddf="cd $HOME/dotfiles/"
 
@@ -36,7 +37,13 @@ alias cddf="cd $HOME/dotfiles/"
 alias cpwd="pwd | xclip -r -selection secondary && echo 'pwd copied'"
 alias cdwd="cd $(xclip -o -selection secondary)"
 
+# Grep commands
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
 #escrotum (screenshot) commands
+#alias scrot="escrotum $HOME/Data/Screenshots/%Y-%b-%d_%T.png"
 alias scrot="escrotum $HOME/Data/Screenshots/%F%T.png"
 alias scrots="escrotum -s $HOME/Data/Screenshots/%F%T.png"
 alias scrotf="escrotum -s $HOME/Data/Screenshots/ "
@@ -121,7 +128,6 @@ function untar {
 #Backup all config files to github repo
 gitBackup(){
     cd $HOME
-    #	rsync -av --progress .config ~/Data/Git/dotfiles/config/ --exclude .config/vivald*
     rsync -av --exclude-from='exclude-list.txt' $HOME/ $HOME/Data/Git/dotfiles/config
     echo "Backup finished"
     cd $HOME/Data/Git/dotfiles/
@@ -142,7 +148,6 @@ gitRestoreFile(){
     cp $1 $HOME
 }
 
-#Debug st
 debugSt(){
     sudo rm -r deleteme
     sudo cp -r wolfst deleteme/
