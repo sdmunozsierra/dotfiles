@@ -21,6 +21,7 @@ Plugin 'ajh17/spacegray.vim'
 "Plugin 'severin-lemaignan/vim-minimap' "Still alpha
 " -- Tools -- "
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'Valloric/YouCompleteMe' "run ./install.py if disconnection
