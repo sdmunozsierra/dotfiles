@@ -12,7 +12,8 @@ DEFAULT_PKGS="$(find . -maxdepth 1  ! -name '.*' -type d | sed "s|./||")"
 DEFAULT_PKGS=("${DEFAULT_PKGS[@]/scripts/}")  # Remove pkg from Default pkgs
 DEFAULT_PKGS=("${DEFAULT_PKGS[@]/.git/}")  # Remove pkg from Default pkgs
 
-echo "Setting $PROF profile specific packages: $PROFILE_PKGS"
+echo "Setting $PROF profile specific packages:"
+echo "$PROFILE_PKGS"
 for PKG in ${PROFILE_PKGS[@]}; do
     if [[ $PKG == */$PROF ]] ; then
         PKG_NAME=${PKG%/*}
@@ -38,7 +39,8 @@ for PKG in ${PROFILE_PKGS[@]}; do
     fi
 done
 
-echo "Setting default packages: $DEFAULT_PKGS"
+echo "Setting default packages:"
+echo "$DEFAULT_PKGS"
 for PKG in ${DEFAULT_PKGS[@]}; do
     cd $DIR  # Go back to root
     echo "Stow default profile: $PKG"
