@@ -279,10 +279,14 @@ augroup END
 nmap oo o<Esc>k
 nmap OO O<Esc>j
 " This makes faster going into insert mode
-set timeoutlen=200
+set timeoutlen=170
 
 " Shell current line insert (magik)
 :noremap Q !!$SHELL<CR>
+
+" Run a macro in @q
+:nnoremap <Space><Space> @q
+
 "----------------------------------------
 "------------- OPTIONS ------------------
 "----------------------------------------
