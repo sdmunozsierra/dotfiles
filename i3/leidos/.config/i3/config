@@ -65,8 +65,8 @@ bindsym $mod+Shift+equal move container to workspace $WS12
 ##############################
 
 # Borders 
-new_window pixel 1
-new_float  pixel 2
+new_window pixel 3
+new_float  pixel 5
 
 # Gaps 
 set $default_gaps_inner 10
@@ -128,10 +128,15 @@ for_window [class="mpv"] move container to workspace $WS9
 for_window [class="M(?i)Player"] move container to workspace $WS9
 for_window [class="sky"] move container to workspace $WS11 
 
-# Swap caps lock and escape
+for_window [title="Run - mapviewer_backend"] move container to workspace $WS11 
+
+# Swap caps lock and escape CAUTION
 exec_always --no-startup-id xmodmap -e "clear lock"
-exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+#exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+#exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+# Normal lock and scape
+exec_always --no-startup-id xmodmap -e "keycode 9 = Escape NoSymbol Escape"
+exec_always --no-startup-id xmodmap -e "keycode 66 = Caps_Lock NoSymbol Caps_Lock"
 
 ##############################
 ###### AUDIO AND VIDEO #######
