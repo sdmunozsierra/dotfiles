@@ -1,0 +1,11 @@
+#!/bin/bash
+
+TITLE=$(ps -ax | grep mpv | grep -oP '"\K[^"\047]+(?=["\047])')
+
+#If Nothing is playing
+if [ -z $TITLE ] 
+then
+    echo &#xf7ca Meditate &#xf5ba
+else
+    echo $TITLE
+fi

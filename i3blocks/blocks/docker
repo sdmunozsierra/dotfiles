@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Number of docker containers running
+count=$(docker ps -q | wc -l | sed -r 's/^0$//g')
+# Recent docker container IP
+recent_ip=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}" $(docker ps -ql))
+
+#docker_names=$(docker inspect -f "{{.Name}}" $(docker ps -qa --no-trunc) | cut -c2- | awk -F "-" '{printf "%s " ,$3}')
+docker_names=$(docker inspect -f "{{.Name}}" $(docker ps -qa --no-trunc) | cut -c2- | awk -F "-" '{printf "%s " ,$2}')
+echo "$LABEL$count: $docker_names"

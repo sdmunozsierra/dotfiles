@@ -1,0 +1,7 @@
+#!/bin/bash
+
+title=`~/Data/ArchScripts/mpsyt_info.sh`
+
+#Chop everything if contains a path e.g. /Data/Arch..
+TITLE=${title##*/*}
+echo "$TITLE"
