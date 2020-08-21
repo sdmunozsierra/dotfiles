@@ -24,7 +24,7 @@ set $WS1  1:Desktop
 set $WS2  2:Web
 set $WS3  3:Notes
 set $WS4  4:Bash
-set $WS5  5:Download
+set $WS5  5:Git
 set $WS6  6:File
 set $WS7  7:Doc
 set $WS8  8:VM
@@ -68,8 +68,8 @@ bindsym $mod+Shift+equal move container to workspace $WS12
 ##############################
 
 # Borders 
-new_window pixel 1
-new_float  pixel 2
+new_window pixel 2
+new_float  pixel 
 
 # Gaps 
 set $default_gaps_inner 10
@@ -92,9 +92,8 @@ workspace "$WS12" gaps outer 0
 
 ## Set default programs
 set $browser firefox
-# TODO change st to xst
-set $term st 
-set $term2 st -e zsh
+set $term xst 
+set $term2 xst -e zsh
 set $dmenuTheme -fn 'Raleway-16:bold' -nb '#141413' -nf '#f8f6f2' -sf '#141413' -sb '#ffa724' 
 
 # Start a terminal
@@ -259,6 +258,19 @@ mode "move" {
     bindsym Escape mode "default" 
 }
 
+# Move a workspace to another monitor (multi monitor setup)
+bindsym $mod+Ctrl+o mode "move_workspace"
+mode "move_workspace" {
+    bindsym Up move workspace to output up
+    bindsym Down move workspace to output down
+    bindsym Left move workspace to output left
+    bindsym Right move workspace to output right
+
+	# back to normal: Escape or Enter
+    bindsym Return mode "default"
+    bindsym Escape mode "default" 
+}
+
 # Power mode 
 bindsym $mod+Ctrl+p mode "power" exec "i3-nagbar -t warning -m 'Remember to exit power mode after unlock' "
 mode "power"{
@@ -349,15 +361,14 @@ bar {
     id bar-0
     position 	top
     status_command 	    i3blocks -c ~/.config/i3blocks/i3blocks.conf
+
     #tray_output primary #display the tray only on primary output
-    
     strip_workspace_numbers yes
 
     colors{
         background $background 		#Bar Background
         statusline $white		    #Bar Letters
         separator  $darkblack 		#Bar Separator
-
         			        #Margin    #Backgd    #Letters 
         focused_workspace	$yellow    $yellow    $darkblack
         active_workspace	$blue      $blue      $darkblack
