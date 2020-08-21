@@ -304,7 +304,7 @@ mode "gaps"{
 # Config mode 
 bindsym $mod+Ctrl+c mode "config"
 mode "config"{
-	bindsym w   exec i3-msg 'exec "$term -e vim .config/i3/config" '
+	bindsym w   exec i3-msg 'exec "$term -e vim ~/.config/i3/config"'
 	bindsym b   exec i3-msg 'exec "$term -e vim .config/i3blocks/i3blocks.conf" move $WS0'
 	bindsym a   exec i3-msg 'exec "$term -e vim .bash_aliases" move $WS0'
 	bindsym v   exec i3-msg 'exec "$term -e vim .vimrc" move $WS0'

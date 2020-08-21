@@ -311,7 +311,7 @@ mode "gaps"{
 # Config mode 
 bindsym $mod+Ctrl+c mode "config"
 mode "config"{
-	bindsym w   exec i3-msg 'exec "$term -e vim .config/i3/config" '
+	bindsym w   exec i3-msg 'exec "$term -e vim ~/.config/i3/config"'
 	bindsym b   exec i3-msg 'exec "$term -e vim .config/i3blocks/i3blocks.conf" move $WS0'
 	bindsym a   exec i3-msg 'exec "$term -e vim .bash_aliases" move $WS0'
 	bindsym v   exec i3-msg 'exec "$term -e vim .vimrc" move $WS0'
@@ -367,7 +367,7 @@ bar {
     id bar-0
     position 	top
     status_command 	i3blocks -c ~/Data/Git/dotfiles/ArchScripts/i3blocks/i3blocks.conf 
-    
+
     #tray_output primary #display the tray only on primary output
     strip_workspace_numbers yes
 
@@ -375,10 +375,10 @@ bar {
         background $background 		#Bar Background
         statusline $white		    #Bar Letters
         separator  $yellow 		    #Bar Separator
+        			        #Margin    #Backgd    #Letters 
         focused_workspace	$darkblue   $darkblue   $white
         active_workspace	$blue       $blue       $darkblack
         inactive_workspace  $background $background $white
         urgent_workspace    $darkred    $darkred    $white
-
     }	
 }
