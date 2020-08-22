@@ -1,6 +1,7 @@
 #!/bin/bash
 # This script will install profile specific dotfiles with stow.
 # In case of not a profile a default configuration will be installed.
+# Use: $ ./stow-it.sh justin
 
 PROF=$1  # justin, edward, leidos
 DIR="$HOME/dotfiles"
