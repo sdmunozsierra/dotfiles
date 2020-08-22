@@ -120,12 +120,11 @@ bindsym $mod+Ctrl+Delete exec --no-startup-id xfce4-taskmanager
 for_window [class="Yad"] floating enable
 for_window [class="Galculator"] floating enable focus
 for_window [class="(?i)lxappearance"] floating enable change container layout (stacked, tabbed, toggle split)
-
-for_window [class="firefox"] move container to workspace $WS2
+for_window [class="(?i)firefox"] move container to workspace $WS2
 for_window [class="notes"] move container to workspace $WS3
 for_window [class="simplenote"] move container to workspace $WS3 border pixel 1
 for_window [class="mpv"] move container to workspace $WS9
-for_window [class="M(?i)Player"] move container to workspace $WS9
+for_window [class="(?i)M(?i)Player"] move container to workspace $WS9
 for_window [class="sky"] move container to workspace $WS11 
 
 for_window [title="Run - mapviewer_backend"] move container to workspace $WS11 
