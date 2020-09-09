@@ -60,6 +60,11 @@ alias hibern="sudo systemctl hibernate"
 alias suspend="sudo systemctl suspend"
 
 ## Specific Commands
+#aws
+# Installed from curl at: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-prereq
+# Pacman package was giving trouble. Delete this when resolved.
+alias aws="/usr/local.bin/aws"
+
 #zsh commands
 alias z="zsh"
 
