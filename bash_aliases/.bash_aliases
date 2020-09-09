@@ -33,6 +33,9 @@ alias cds="cd $HOME/Data/Git/Springbank/mapviewer-backend/"
 alias cdp="cd $HOME/Data/Git/python-prototype/"
 alias cddf="cd $HOME/dotfiles/"
 
+# du Commands
+alias foldersize="sudo du -sh ."
+
 # change working directory (requires xclip)
 alias cpwd="pwd | xclip -r -selection secondary && echo 'pwd copied'"
 alias cdwd="cd $(xclip -o -selection secondary)"
