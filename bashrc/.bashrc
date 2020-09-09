@@ -46,8 +46,9 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # Bash Completion
-for file in /usr/local/etc/bash_completion.d/* ; do
-    source "$file"
-done
+# Blash complition is installed via pacman as `bash-completion`
+#for file in /usr/local/etc/bash_completion.d/* ; do
+    #source "$file"
+#done
 
 export PATH=/home/$USER/.local/bin:/home/$USER/.gem/ruby/2.4.0/bin:/home/$USER/.gem/ruby/2.5.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/ti/msp430_gcc/bin
