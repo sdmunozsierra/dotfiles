@@ -365,8 +365,7 @@ bar {
     font pango:Gidole Nerd Font 14
     id bar-0
     position 	top
-    status_command 	i3blocks -c ~/Data/Git/dotfiles/ArchScripts/i3blocks/i3blocks.conf 
-
+    status_command 	i3blocks -c ~/.config/i3blocks/i3blocks.conf
     #tray_output primary #display the tray only on primary output
     strip_workspace_numbers yes
 

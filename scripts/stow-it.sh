@@ -25,6 +25,7 @@ for PKG in ${PROFILE_PKGS[@]}; do
         if [ -z "$CONFLICTS" ]; then
             stow --verbose $PROF -t ~
         else
+            # In case of a clonflict remove Local version and stow the Git version.
             echo "Found the following conflicts:" 
             for filename in ${CONFLICTS[@]}; do
                 echo $filename
@@ -49,6 +50,7 @@ for PKG in ${DEFAULT_PKGS[@]}; do
     if [ -z "$CONFLICTS" ]; then
         stow --verbose $PKG
     else
+        # In case of a clonflict remove Local version and stow the Git version.
         echo "Found the following conflicts:" 
         for filename in ${CONFLICTS[@]}; do
             echo $filename

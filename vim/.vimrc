@@ -287,12 +287,19 @@ set timeoutlen=170
 " Run a macro in @q
 :nnoremap <Space><Space> @q
 
-" jump to the previous function
+" Jump to the previous function
 nnoremap <silent> [f :call
 \ search('\(\(if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "bw")<CR>
-" jump to the next function
+" Jump to the next function
 nnoremap <silent> ]f :call
 \ search('\(\(if\\|for\\|while\\|switch\\|catch\)\_s*\)\@64<!(\_[^)]*)\_[^;{}()]*\zs{', "w")<CR>
+
+" Use gt to foward and gT or gp to rewind buffers
+map gt :bn<cr>
+map gp :bp<cr>
+map gT :bp<cr>
+" Close gd current buffer
+map gd :bd<cr>
 "
 "----------------------------------------
 "------------- OPTIONS ------------------

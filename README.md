@@ -2,16 +2,32 @@
 Dotfiles managed with Stow
 
 ## Profiles
-TODO implement
 Justin
 Ed
-Work (We should nickname this one the most madafucking reliable guy in History ... Mike from Jane the virgin..)
+Leidos
+
+## Run Script
+To install all the programs for a specific profile do:
+
+```
+$ cd scripts/
+$ ./stow-it.sh justin
+```
 
 ## Programs
 stow bash_aliases
 stow bash_profile
 stow bashrc
+stow docker
+stow fontconfig
+stow gitconfig
+stow ideavimrc
+stow mps-youtube
+stow picom
+stow redshift
 stow vim
+stow xinitrc
+stow xresources
 
 ## Profile Specific Programs
 ### Ed
@@ -20,9 +36,9 @@ stow i3/lap -t ~          # ~.config/i3/config
 ### Justin
 cd zshrc && stow justin -t ~    # ~.zshrc
 cd i3/justin && stow .config -t ~/.config  
-### Off
-stow gitconfig/off -t ~   # ~.gitconfig
-cd zshrc && stow off -t ~ # ~.zshrc
+### Leidos
+stow gitconfig/leidos -t ~   # ~.gitconfig
+cd zshrc && stow leidos -t ~ # ~.zshrc
 
 ## Executables
 
