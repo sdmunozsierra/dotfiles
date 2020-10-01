@@ -216,6 +216,9 @@ command! -register CopyMatches call CopyMatches(<q-reg>)
 :noremap <F4> :set hlsearch! hlsearch?<CR>
 set hlsearch
 
+"Press F5 to maximize current window
+map <F5> <C-W>_<C-W><Bar>
+
 "Beautify code see gh.com/Chiel92 for specific languages
 noremap <F6> :Autoformat<CR>
 "Indent all file `mzgg=G'z`
