@@ -16,7 +16,7 @@ font pango:Gidole Nerd Font 12
 ##############################
 
 # Default layout
-workspace_layout default 
+workspace_layout default
 
 # Workspace name
 set $WS0  0:Dev 
@@ -48,7 +48,7 @@ bindsym $mod+0 workspace $WS10
 bindsym $mod+underscore workspace $WS11
 bindsym $mod+equal workspace $WS12
 
-# Move focused container 
+# Move focused container
 bindsym $mod+Shift+grave move container to workspace $WS0
 bindsym $mod+Shift+1 move container to workspace $WS1
 bindsym $mod+Shift+2 move container to workspace $WS2
@@ -64,14 +64,14 @@ bindsym $mod+Shift+underscore move container to workspace $WS11
 bindsym $mod+Shift+equal move container to workspace $WS12
 
 ##############################
-###### GAPS AND BORDERS ###### 
+###### GAPS AND BORDERS ######
 ##############################
 
-# Borders 
+# Borders
 new_window pixel 2
-new_float  pixel 
+new_float  pixel
 
-# Gaps 
+# Gaps
 set $default_gaps_inner 10
 set $default_gaps_outer 5
 gaps inner $default_gaps_inner
@@ -80,7 +80,7 @@ smart_gaps on
 smart_borders on
 
 # Set workspace specific gaps
-workspace "$WS3" gaps inner 50 
+workspace "$WS3" gaps inner 50
 workspace "$WS3" gaps outer 20
 workspace "$WS12" gaps inner 0
 workspace "$WS12" gaps outer 0
@@ -92,16 +92,16 @@ workspace "$WS12" gaps outer 0
 
 ## Set default programs
 set $browser firefox
-set $term xst 
+set $term xst
 set $term2 xst -e zsh
-set $dmenuTheme -fn 'Raleway-16:bold' -nb '#141413' -nf '#f8f6f2' -sf '#141413' -sb '#ffa724' 
+set $dmenuTheme -fn 'Raleway-16:bold' -nb '#141413' -nf '#f8f6f2' -sf '#141413' -sb '#ffa724'
 
 # Start a terminal
-bindsym $mod+Return exec $term 
+bindsym $mod+Return exec $term
 bindsym $mod+Ctrl+Return exec ~/Data/ArchScripts/penejada.sh
 bindsym $mod+slash exec $term2
 
-# Start dmenu 
+# Start dmenu
 bindsym $mod+d exec --no-startup-id dmenu-recent-aliases -i -p ' ' $dmenuTheme
 
 # Autostart programs
@@ -129,7 +129,13 @@ for_window [class="notes"] move container to workspace $WS3
 for_window [class="simplenote"] move container to workspace $WS3 border pixel 1
 for_window [class="mpv"] move container to workspace $WS9
 for_window [class="(?i)M(?i)Player"] move container to workspace $WS9
-for_window [class="sky"] move container to workspace $WS11 
+for_window [class="sky"] move container to workspace $WS11
+
+# Floating settings
+# ./i3-get-window-criteria
+for_window [floating] resize set 1750 750
+for_window [window_role="About"] floating enable
+for_window [instance="(?i)seahorse"] floating enable; resize set 1000 750; move position center
 #for_window [class="^jetbrains-idea$"] floating enable, focus
 
 ##############################
@@ -256,7 +262,7 @@ mode "move" {
 
 	# back to normal: Escape or Enter
     bindsym Return mode "default"
-    bindsym Escape mode "default" 
+    bindsym Escape mode "default"
 }
 
 # Move a workspace to another monitor (multi monitor setup)
@@ -269,10 +275,10 @@ mode "move_workspace" {
 
 	# back to normal: Escape or Enter
     bindsym Return mode "default"
-    bindsym Escape mode "default" 
+    bindsym Escape mode "default"
 }
 
-# Power mode 
+# Power Mode
 bindsym $mod+Ctrl+p mode "power" exec "i3-nagbar -t warning -m 'Remember to exit power mode after unlock' "
 mode "power"{
 	bindsym p	exec systemctl poweroff
@@ -302,7 +308,7 @@ mode "gaps"{
 	bindsym Return mode "default"
 }
 
-# Config mode 
+# Config Mode
 bindsym $mod+Ctrl+c mode "config"
 mode "config"{
 	bindsym w   exec i3-msg 'exec "$term -e vim ~/.config/i3/config"'
@@ -325,26 +331,26 @@ mode "config"{
 #############################
 
 # Xresources
-set_from_resource $background  background  
-set_from_resource $foreground  foreground  
-set_from_resource $darkblack   color0  
-set_from_resource $black       color8  
-set_from_resource $darkred     color1  
-set_from_resource $red         color9  
-set_from_resource $darkgreen   color2  
-set_from_resource $green       color10 
-set_from_resource $darkyellow  color3  
-set_from_resource $yellow      color11 
-set_from_resource $darkblue    color4  
-set_from_resource $blue        color12 
-set_from_resource $darkmagenta color5  
-set_from_resource $magenta     color13 
-set_from_resource $darkcyan    color6  
-set_from_resource $cyan        color14 
-set_from_resource $darkwhite   color7  
-set_from_resource $white       color15 
+set_from_resource $background  background
+set_from_resource $foreground  foreground
+set_from_resource $darkblack   color0
+set_from_resource $black       color8
+set_from_resource $darkred     color1
+set_from_resource $red         color9
+set_from_resource $darkgreen   color2
+set_from_resource $green       color10
+set_from_resource $darkyellow  color3
+set_from_resource $yellow      color11
+set_from_resource $darkblue    color4
+set_from_resource $blue        color12
+set_from_resource $darkmagenta color5
+set_from_resource $magenta     color13
+set_from_resource $darkcyan    color6
+set_from_resource $cyan        color14
+set_from_resource $darkwhite   color7
+set_from_resource $white       color15
 
-set $hl magenta 
+set $hl magenta
 ############################
 ########  COLORS ###########
 ############################
@@ -355,7 +361,7 @@ client.focused_inactive $blue      $blue      $darkblack $red       $blue
 client.unfocused        $darkblack $darkblack $white     $red       $darkblack
 client.urgent           $red       $red       $white     $red       $red
 client.placeholder      $darkblack $darkblack $darkblack $darkblack $darkblack
- 
+
 
 bar {
     font pango:Arimo Nerd Font 13
@@ -370,10 +376,10 @@ bar {
         background $background 		#Bar Background
         statusline $white		    #Bar Letters
         separator  $darkblack 		#Bar Separator
-        			        #Margin    #Backgd    #Letters 
+        			        #Margin    #Backgd    #Letters
         focused_workspace	$yellow    $yellow    $darkblack
         active_workspace	$blue      $blue      $darkblack
         inactive_workspace 	$darkblack $darkblack $white
         urgent_workspace   	$red       $red       $darkblack
-    }	
+    }
 }
