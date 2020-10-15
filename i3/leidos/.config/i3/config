@@ -127,8 +127,6 @@ for_window [class="mpv"] move container to workspace $WS9
 for_window [class="(?i)M(?i)Player"] move container to workspace $WS9
 for_window [class="sky"] move container to workspace $WS11 
 
-for_window [title="Run - mapviewer_backend"] move container to workspace $WS11 
-
 # Swap caps lock and escape CAUTION
 exec_always --no-startup-id xmodmap -e "clear lock"
 #exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"

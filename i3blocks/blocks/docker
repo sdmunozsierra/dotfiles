@@ -7,4 +7,6 @@ recent_ip=$(docker inspect -f "{{ .NetworkSettings.IPAddress }}" $(docker ps -ql
 
 #docker_names=$(docker inspect -f "{{.Name}}" $(docker ps -qa --no-trunc) | cut -c2- | awk -F "-" '{printf "%s " ,$3}')
 docker_names=$(docker inspect -f "{{.Name}}" $(docker ps -qa --no-trunc) | cut -c2- | awk -F "-" '{printf "%s " ,$2}')
-echo "$LABEL$count: $docker_names"
+# echo "$" prints multispace; echo $ prints monospace.
+echo "$LABEL$count: $docker_names "
+

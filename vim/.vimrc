@@ -217,7 +217,7 @@ command! -register CopyMatches call CopyMatches(<q-reg>)
 set hlsearch
 
 "Press F5 to maximize current window
-map <F5> <C-W>_<C-W><Bar>
+"map <F5> <C-W>_<C-W><Bar>
 
 "Beautify code see gh.com/Chiel92 for specific languages
 noremap <F6> :Autoformat<CR>
@@ -303,7 +303,28 @@ map gp :bp<cr>
 map gT :bp<cr>
 " Close gd current buffer
 map gd :bd<cr>
-"
+" CtrlO ctrlo Maximize windows
+"nnoremap <C-W>O :call MaximizeToggle()<CR>
+"nnoremap <C-W>o :call MaximizeToggle()<CR>
+"nnoremap <C-W><C-O> :call MaximizeToggle()<CR>
+"nnoremap <leader><F5> :call MaximizeToggle()<CR>
+
+"function! MaximizeToggle()
+  "if exists("s:maximize_session")
+    "exec "source " . s:maximize_session
+    "call delete(s:maximize_session)
+    "unlet s:maximize_session
+    "let &hidden=s:maximize_hidden_save
+    "unlet s:maximize_hidden_save
+  "else
+    "let s:maximize_hidden_save = &hidden
+    "let s:maximize_session = tempname()
+    "set hidden
+    "exec "mksession! " . s:maximize_session
+    "only
+  "endif
+"endfunction
+
 "----------------------------------------
 "------------- OPTIONS ------------------
 "----------------------------------------
