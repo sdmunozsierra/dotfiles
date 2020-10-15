@@ -1,0 +1,5 @@
+#!/bin/bash
+
+git st
+git add .gitlab-ci.yml
+git comn $1

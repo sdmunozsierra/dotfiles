@@ -11,10 +11,12 @@ branchName=$2
 
 # establish branch and tag name variables
 releaseBranch=munozsies/$issueNumber-$branchName
-echo "Creating branch $releaseBranch"
+echo "Stashing current changes"
 git stash
+echo "Creating branch $releaseBranch"
 git branch $releaseBranch
 git checkout $releaseBranch
 git push --set-upstream origin $releaseBranch
-git checkout $branch
-git stash pop
+# Switching back to the previous branch is annoying
+#git checkout $branch
+#git stash pop
