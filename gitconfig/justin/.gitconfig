@@ -5,7 +5,7 @@
 [core]
 	editor = vim
 [credential]
-	helper = seahorse
+    helper = seahorse
 [gpg]
 	program = gpg2
 [alias]
