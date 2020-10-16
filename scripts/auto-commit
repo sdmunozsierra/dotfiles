@@ -1,5 +1,7 @@
 #!/bin/bash
 
-git st
+git st | head -n 2
 git add .gitlab-ci.yml
 git comn $1
+git st | head -n 3
+echo "Ready to push"

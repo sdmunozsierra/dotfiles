@@ -51,6 +51,9 @@ export PATH=/home/$USER/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/
 # Add scripts from dotfiles to PATH
 export PATH=$PATH:~/dotfiles/scripts
 
+# Add rubygems to PATH
+export PATH=$PATH:~/.gem/ruby/2.7.0/bin
+
 # Bash Completion
 # Blash complition is installed via pacman as `bash-completion`
 #for file in /usr/local/etc/bash_completion.d/* ; do
