@@ -33,6 +33,9 @@ alias cds="cd $HOME/Data/Git/Springbank/mapviewer-backend/"
 alias cdp="cd $HOME/Data/Git/python-prototype/"
 alias cddf="cd $HOME/dotfiles/"
 
+# pushd popd Commands
+alias dirs="dirs -v"
+
 # du Commands
 alias foldersize="sudo du -sh ."
 
@@ -67,6 +70,9 @@ alias aws="/usr/local/bin/aws"
 
 #zsh commands
 alias z="zsh"
+
+#bro commands
+alias broski='function _(){ bro $1 | grep -B1 $1; }; _'
 
 #color theme
 alias displayColors="$HOME/Data/ArchScripts/display_colors.sh"

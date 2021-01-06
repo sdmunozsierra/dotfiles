@@ -13,6 +13,7 @@
 	# Show diff when preparing commit message
 	verbose = false
 [alias]
+    rs = restore --staged
 	unstage = reset HEAD --
     st = status
     co = checkout
