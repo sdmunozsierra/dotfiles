@@ -5,6 +5,8 @@
 [core]
 	editor = vim
 [credential]
+    # helper = /usr/bin/pass-git-helper
+    # helper = /usr/lib/git-core/git-credential-libsecret
     helper = seahorse
 [gpg]
 	program = gpg2
@@ -17,10 +19,16 @@
     aa = add .
 	comm = commit -S -m
     comn = !"f() { message=\"#$(git rev-parse --abbrev-ref HEAD | cut -d \"-\" -f1): $1\"; git commit -S -m \"$message\"; }; f"
-    last = log -1 HEAD
+    auto = !"f(){ auto-commit $1; }; f"
+	last = log -1 HEAD
     recomm = reset --soft HEAD~1
     uncommit = reset --soft HEAD~1
-
+    delete = !git stash && git drop ;:
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 # If having network problems i.e. behind firewall enable:
 ;[url "ssh://aur@aur.archlinux.org/"]
     ;insteadOf = https://aur.archlinux.org/
