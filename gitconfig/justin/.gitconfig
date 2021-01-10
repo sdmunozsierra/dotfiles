@@ -5,8 +5,7 @@
 [core]
 	editor = vim
 [credential]
-    # helper = /usr/bin/pass-git-helper
-    # helper = /usr/lib/git-core/git-credential-libsecret
+    # Remember to use SSH
     helper = seahorse
 [gpg]
 	program = gpg2
