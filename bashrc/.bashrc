@@ -31,7 +31,7 @@ alias fgrep='fgrep --color=auto'
 
 #PS1='\[\e[00;34m\]Keanue  \W \[\e[0m\]' #Show small minimal path (Blue)
 #PS1='\[\033[1;31m\]Keanue  \W\[\033[1;33m\]\$\[\033[1;00m\] '	#Show small path
-PS1='\[\033[1;31m\]Keanue  $PWD\[\033[1;31m\]\$\[\033[1;00m\] '	#Show full path
+PS1='\[\033[1;31m\]\u  $PWD\[\033[1;31m\]\$\[\033[1;00m\] '	#Show full path
 
 # 256 file enabled by default in st
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
@@ -54,9 +54,32 @@ export PATH=$PATH:~/dotfiles/scripts
 # Add rubygems to PATH
 export PATH=$PATH:~/.gem/ruby/2.7.0/bin
 
+# Central Server
+export CENTRAL_SSH=guacadmin@10.58.247.81
+
 # Bash Completion
 # Blash complition is installed via pacman as `bash-completion`
 #for file in /usr/local/etc/bash_completion.d/* ; do
     #source "$file"
 #done
 
+
+# Run 'nvm use' automatically every time there's 
+# a .nvmrc file in the directory. Also, revert to default 
+# version when entering a directory without .nvmrc
+enter_directory() {
+if [[ $PWD == $PREV_PWD ]]; then
+    return
+fi
+
+PREV_PWD=$PWD
+if [[ -f ".nvmrc" ]]; then
+    nvm use
+    NVM_DIRTY=true
+elif [[ $NVM_DIRTY = true ]]; then
+    nvm use default
+    NVM_DIRTY=false
+fi
+}
+
+export PROMPT_COMMAND=enter_directory
