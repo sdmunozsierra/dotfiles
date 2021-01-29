@@ -29,9 +29,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 
-#PS1='\[\e[00;34m\]Keanue  \W \[\e[0m\]' #Show small minimal path (Blue)
+PS1='\[\e[00;34m\]\W$ \[\e[0m\]' #Show small minimal path (Blue)
 #PS1='\[\033[1;31m\]Keanue  \W\[\033[1;33m\]\$\[\033[1;00m\] '	#Show small path
-PS1='\[\033[1;31m\]\u  $PWD\[\033[1;31m\]\$\[\033[1;00m\] '	#Show full path
+#PS1='\[\033[1;31m\]\u  $PWD\[\033[1;31m\]\$\[\033[1;00m\] '	#Show full path
 
 # 256 file enabled by default in st
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then

@@ -65,16 +65,16 @@ bindsym $mod+Shift+equal move container to workspace $WS12
 ##############################
 
 # Borders 
-new_window pixel 3
-new_float  pixel 5
+new_window pixel 1
+new_float  pixel 2
 
 # Gaps 
-set $default_gaps_inner 10
-set $default_gaps_outer 5
-gaps inner $default_gaps_inner
-gaps outer $default_gaps_outer
+for_window [class=".*"] border pixel 2
+gaps inner 10
+gaps outer 1
 smart_gaps on
 smart_borders on
+
 
 # Set workspace specific gaps
 workspace "$WS3" gaps inner 50 
@@ -346,17 +346,25 @@ set_from_resource $cyan        color14
 set_from_resource $darkwhite   color7  
 set_from_resource $white       color15 
 
-set $hl magenta 
+set $xgray1 #262626
+set $xgray2 #303030
+set $xgray3 #3A3A3A
+set $xgray4 #444444
+set $xgray5 #4E4E4E
+
+set $hard_black #121212
 ############################
 ########  COLORS ###########
 ############################
 
-##class                 border     backgr.    text       indicator  child
-client.focused          $yellow    $yellow    $darkblack $darkblack $yellow
-client.focused_inactive $blue      $blue      $darkblack $red       $blue
-client.unfocused        $darkblack $darkblack $white     $red       $darkblack
-client.urgent           $red       $red       $white     $red       $red
-client.placeholder      $darkblack $darkblack $darkblack $darkblack $darkblack
+# Colors                border        background  text          indicator   child_border
+client.focused          $darkblack    $xgray3     $yellow       $yellow     $yellow
+client.focused_inactive $xgray3       $xgray3     $black        $xgray3     $xgray3
+client.unfocused        $xgray1       $xgray1     $black        $xgray1     $xgray1
+client.urgent           $darkred      $darkred    $darkred      $darkred    $darkred
+client.placeholder      $xgray3       $hard_black $black        $xgray3     $xgray3
+client.background       $darkblack 
+ 
  
 
 bar {
@@ -368,13 +376,15 @@ bar {
     strip_workspace_numbers yes
 
     colors{
-        background $background 		#Bar Background
-        statusline $white		    #Bar Letters
-        separator  $yellow 		    #Bar Separator
-        			        #Margin    #Backgd    #Letters 
-        focused_workspace	$darkblue   $darkblue   $white
-        active_workspace	$blue       $blue       $darkblack
-        inactive_workspace  $background $background $white
-        urgent_workspace    $darkred    $darkred    $white
+        background $darkblack
+        statusline $white
+        separator  $yellow
+
+        # Colors           border       background   text
+        focused_workspace  $darkwhite   $darkblack   $white
+        active_workspace   $xgray3      $xgray3      $white
+        inactive_workspace $darkblack   $darkblack   $darkwhite
+        urgent_workspace   $darkred     $darkred     $darkwhite
+        binding_mode       $darkmagenta $darkmagenta $white
     }	
 }

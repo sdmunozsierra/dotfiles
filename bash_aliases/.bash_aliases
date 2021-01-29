@@ -30,7 +30,9 @@ alias cd......="cd ../../../../.."
 alias cdd="cd $HOME/Data/"
 alias cdg="cd $HOME/Data/Git/"
 alias cds="cd $HOME/Data/Git/Springbank/mapviewer-backend/"
-alias cdp="cd $HOME/Data/Git/python-prototype/"
+alias cdmbs="cd $HOME/Data/Git/EEP/backendservices"
+alias cdms="cd $HOME/Data/Git/EEP/tool-scrapers"
+alias cdmb="cd $HOME/Data/Git/EEP/markit-backend"
 alias cddf="cd $HOME/dotfiles/"
 
 # pushd popd Commands
@@ -50,9 +52,9 @@ alias fgrep='fgrep --color=auto'
 
 #escrotum (screenshot) commands
 #alias scrot="escrotum $HOME/Data/Screenshots/%Y-%b-%d_%T.png"
-alias scrot="escrotum $HOME/Data/Screenshots/%F%T.png"
-alias scrots="escrotum -s $HOME/Data/Screenshots/%F%T.png"
-alias scrotf="escrotum -s $HOME/Data/Screenshots/ "
+alias scrot="i3-scrot"
+alias scrots="i3-scrot -s"
+alias scrotw="i3-scrot -w"
 
 # Keyboard change
 alias asdf="sudo loadkeys colemak"
