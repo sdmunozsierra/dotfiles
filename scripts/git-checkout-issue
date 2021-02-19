@@ -10,7 +10,7 @@ issueNumber=$1
 branchName=$2
 
 # establish branch and tag name variables
-releaseBranch=munozsies/$issueNumber-$branchName
+releaseBranch=munozsies/#$issueNumber-$branchName
 echo "Stashing current changes"
 git stash
 echo "Creating branch $releaseBranch"
