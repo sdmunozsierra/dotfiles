@@ -17,6 +17,9 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
 fi
 
+# keychain - re-use ssh-agent and/or gpg-agent between logins
+keychain
+
 # Colorize commands
 # Load colors with lscolors-git from AUR
 . /usr/share/LS_COLORS/dircolors.sh

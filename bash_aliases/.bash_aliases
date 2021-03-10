@@ -33,6 +33,7 @@ alias cds="cd $HOME/Data/Git/Springbank/mapviewer-backend/"
 alias cdmbs="cd $HOME/Data/Git/EEP/backendservices"
 alias cdms="cd $HOME/Data/Git/EEP/tool-scrapers"
 alias cdmb="cd $HOME/Data/Git/EEP/markit-backend"
+alias cdme="cd $HOME/Data/Git/EEP/markit-environment"
 alias cddf="cd $HOME/dotfiles/"
 
 # pushd popd Commands
