@@ -16,6 +16,7 @@ HISTFILE=~/.bash_history
 HISTSIZE=2000
 SAVEHIST=1000
 setopt appendhistory extendedglob
+unsetopt EXTENDED_HISTORY
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 # The following lines were added by compinstall
