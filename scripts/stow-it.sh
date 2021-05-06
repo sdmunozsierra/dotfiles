@@ -6,7 +6,7 @@
 # TODO add default or --none flag to install only default packages
 
 # Validate Input
-VALID_PROFILES=("justin" "edward" "leidos")
+VALID_PROFILES=("justin" "edward" "leidos" "raspi64")
 if [[ ! " ${VALID_PROFILES[@]} " =~ " $1 " ]]; then
     echo "Invalid profile $1"
     echo "Please use any of the following profiles: ${VALID_PROFILES[@]}"

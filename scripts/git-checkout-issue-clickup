@@ -7,13 +7,13 @@ branch=$(git rev-parse --abbrev-ref HEAD)
 issueNumber=$1
 
 # Clickup number 101, 121
-#clickupNumber=$2
+clickupNumber=$2
 
 # feature-x-y-z
-branchName=$2
+branchName=$3
 
 # establish branch and tag name variables
-releaseBranch="munozsies/#$issueNumber/$branchName"
+releaseBranch="munozsies/DEV-$clickupNumber#$issueNumber/$branchName"
 echo "Stashing current changes"
 git stash
 echo "Creating branch $releaseBranch"

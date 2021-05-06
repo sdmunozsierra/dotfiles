@@ -83,3 +83,5 @@ fi
 }
 
 export PROMPT_COMMAND=enter_directory
+
+source /usr/share/nvm/init-nvm.sh
