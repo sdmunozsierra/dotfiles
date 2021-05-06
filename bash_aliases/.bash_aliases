@@ -186,3 +186,6 @@ makeScript(){
     sudo chmod +x $1
     vim $1
 }
+
+# Chainlink
+alias chainlink='/home/munozsies/go/bin/chainlink'

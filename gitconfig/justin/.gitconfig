@@ -14,10 +14,11 @@
     st = status
     co = checkout
     con = !"f(){ git-checkout-issue $1 $2; }; f"
+    conn = !"f(){ git-checkout-issue-clickup $1 $2 $3; }; f"
     br = branch
     aa = add .
 	comm = commit -S -m
-    comn = !"f() { message=\"#$(git rev-parse --abbrev-ref HEAD | cut -d \"-\" -f1): $1\"; git commit -S -m \"$message\"; }; f"
+    comn = !"f() { message=\"$(git rev-parse --abbrev-ref HEAD | cut -d '#' -f2 | cut -d '/' -f2): $1\"; git commit -S -m \"$message\"; }; f"
     auto = !"f(){ auto-commit $1; }; f"
 	last = log -1 HEAD
     recomm = reset --soft HEAD~1
