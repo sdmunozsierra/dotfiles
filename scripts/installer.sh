@@ -24,12 +24,26 @@ fi
 # Set vars
 installVim=""
 installMySQL=""
+installi3=""
+    
+# Check Linux compatibility Arch Linux or Archlinux Arm
+source /etc/os-release
+if [[ "${NAME}" == *"Arch Linux"* ]] || [[ "${NAME}" == *"Arch Linux Arm"* ]]; then
+    echo "${NAME} Detected."
+else
+    echo "We run arch btw!"
+    exit 1
+fi
+    
 
 # Get arguments
 while [ "$1" != "" ]; do
     case $1 in 
         # Install Vim selection
         -vim | --installVim )
+            installVim=true
+            ;;
+        -i3 | --installi3 )
             installVim=true
             ;;
         -mysql | --installMySQL )
@@ -39,12 +53,22 @@ while [ "$1" != "" ]; do
     shift
 done
 
+
+if [ "${installMySQL}" = true ]; then
+
+    echo -e -n "${CYAN}Vim Plugins: Would you like to install MySQL? (y/N): ${NC}"
+    read PROMPT
+    if [[ ${PROMPT} =~ ^[Yy]$ ]]; then
+        yay -S mysql
+    fi
+
+fi
+
 if [[ -z ${installVim} ]]; then
 
     echo -e -n "${CYAN}Vim: Would you like to install VIM? (y/N): ${NC}"
     read PROMPT
     if [[ ${PROMPT} =~ ^[Yy]$ ]]; then
-        # Install vim using yay
         yay -S vim
     fi
 
@@ -88,24 +112,4 @@ if [[ -z ${installVim} ]]; then
     # fi
 
 fi
-    
-# Different version of Ubuntu/Linux Mint and Debian have different package names...
-source /etc/os-release
-if [[ "${NAME}" == *"Arch Linux"* ]] || [[ "${NAME}" == *"Arch Linux Arm"* ]]; then
-    echo "$NAME"
-    if [ "${installMySQL}" = true ]; then
-        yay -S mysql 
-    elif [ -x "$( command -v mysql )" ]; then
-        echo "Not installing mysql"
-    else
-        yay -S mysql
-        break
-    fi
-else
-    echo "Unsupported distribution - Debian, Kali, Raspbian, Linux Mint or Ubuntu only"
-    exit 1
-fi
 
-    
-
-    
