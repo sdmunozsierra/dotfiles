@@ -53,6 +53,16 @@ while [ "$1" != "" ]; do
     shift
 done
 
+if [ "${installi3}" = true ]; then
+
+    echo -e -n "${CYAN}Install i3: Would you like to install i3? (y/N): ${NC}"
+    read PROMPT
+    if [[ ${PROMPT} =~ ^[Yy]$ ]]; then
+        yay -S mysql
+    fi
+
+fi
+
 
 if [ "${installMySQL}" = true ]; then
 
