@@ -22,9 +22,11 @@ if ! [ $( id -u ) = 0 ]; then
 fi
 
 # Set vars
+installYay=""
 installVim=""
 installMySQL=""
 installi3=""
+installBasic=""
     
 # Check Linux compatibility Arch Linux or Archlinux Arm
 source /etc/os-release
@@ -39,7 +41,6 @@ fi
 # Get arguments
 while [ "$1" != "" ]; do
     case $1 in 
-        # Install Vim selection
         -vim | --installVim )
             installVim=true
             ;;
@@ -49,16 +50,31 @@ while [ "$1" != "" ]; do
         -mysql | --installMySQL )
             installMySQL=true
             ;;
+        -vim | --installBasic )
+            installBasic=true
+            ;;
     esac
     shift
 done
+
+if [ "${installBasic}" = true ]; then
+
+    echo -e -n "${CYAN}Install Basic: Would you like to install basic programs? (y/N): ${NC}"
+    read PROMPT
+    if [[ ${PROMPT} =~ ^[Yy]$ ]]; then
+        pacman -S git --no-confirm
+        
+        yay -S stow --no-confirm
+    fi
+
+fi
 
 if [ "${installi3}" = true ]; then
 
     echo -e -n "${CYAN}Install i3: Would you like to install i3? (y/N): ${NC}"
     read PROMPT
     if [[ ${PROMPT} =~ ^[Yy]$ ]]; then
-        yay -S mysql
+        yay -S i3
     fi
 
 fi
@@ -70,6 +86,20 @@ if [ "${installMySQL}" = true ]; then
     read PROMPT
     if [[ ${PROMPT} =~ ^[Yy]$ ]]; then
         yay -S mysql
+    fi
+
+fi
+
+if [ "${installVNC}" = true ]; then
+
+    echo -e -n "${CYAN}VNC: Would you like to install VNC? (y/N): ${NC}"
+    read PROMPT
+    echo -e -n "${CYAN}VNC: Would you like to install VNC? (y/N): ${NC}"
+    if [[ ${PROMPT} =~ ^[Yy]$ ]]; then
+        yay -S tigervnc-server
+        vncpasswd
+        vncserver :1 &
+        sudo systemctl start vncserver@:1
     fi
 
 fi

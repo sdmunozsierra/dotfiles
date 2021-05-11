@@ -6,7 +6,7 @@
 	editor = vim
 [credential]
     # Remember to use SSH
-    helper = seahorse
+    #helper = seahorse
 [gpg]
 	program = gpg2
 [alias]

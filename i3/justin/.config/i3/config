@@ -112,6 +112,7 @@ exec        --no-startup-id nitrogen --restore
 exec        --no-startup-id betterlockscreen -u ~/Data/Pictures/Walls/lock.jpg
 exec        --no-startup-id $browser
 exec        --no-startup-id redshift-gtk
+exec        --no-startup-id simplenote
 
 # Start programs
 bindsym $mod+t exec --no-startup-id pcmanfm
