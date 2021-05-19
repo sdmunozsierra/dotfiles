@@ -10,28 +10,34 @@ Plugin 'VundleVim/Vundle.vim'
 " -- Interface -- " 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'zefei/vim-wintabs'
-"Plugin 'zefei/vim-wintabs-powerline'
+Plugin 'zefei/vim-wintabs'
+Plugin 'zefei/vim-wintabs-powerline'
 Plugin 'https://github.com/kshenoy/vim-signature.git'
 Plugin 'https://github.com/google/vim-searchindex.git'
 Plugin 'badwolf'
 Plugin 'hhff/SpacegrayEighties.vim'
 Plugin 'chase/focuspoint-vim'
 Plugin 'ajh17/spacegray.vim'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
 "Plugin 'severin-lemaignan/vim-minimap' "Still alpha
 " -- Tools -- "
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'Valloric/YouCompleteMe' "run ./install.py if disconnection
+"requires python
+"Plugin 'Valloric/YouCompleteMe'
+"run ./install.py if disconnection
 Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
+"requires python
+"Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'ryanoasis/vim-devicons'
-" -- Python in Vim -- " USE ATOM [With VIM keybindings of course]
+" -- Python in Vim -- "
+Plugin 'nvie/vim-flake8'
 "Plugin 'https://github.com/python-mode/python-mode.git'
 "Plugin 'https://github.com/plytophogy/vim-virtualenv.git'
 " -- C Programming -- "
@@ -56,7 +62,7 @@ filetype plugin indent on
 let mapleader = ","
 
 set encoding=utf8
-set antialias
+"TODO set antialias " Not recognized on nvim?
 
 " numbers, scheme, syntax
 set number         " Enable line numbers
@@ -228,8 +234,11 @@ vmap <F7> mzgg=G`z<CR>
 map <F10> ggvG :!xclip -f -sel clip<CR>
 vmap <F11> :!xclip -f -sel clip<CR>
 map <F12> :r !xclip -o -sel clip<CR>
+
+"Quick write quit
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
+nmap <leader>x :wq!<cr>
 
 "Use :ws to write as sudo
 cmap ws w !sudo tee > /dev/null %
@@ -273,10 +282,6 @@ augroup VIMRC
   autocmd BufLeave *.js   normal! mJ
   autocmd BufLeave *.php  normal! mP
 augroup END
-
-" Pressing Alt o will insert new line without insert mode FIX YOUR TERM
-" nnoremap <silent><o-o> :set paste<CR>m`o<Esc>``:set nopaste<CR>
-" nnoremap <silent><O-O> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Pressing oo or OO will insert new line without insert mode.
 nmap oo o<Esc>k

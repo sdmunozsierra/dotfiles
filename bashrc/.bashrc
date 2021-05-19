@@ -17,9 +17,6 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<"$XDG_RUNTIME_DIR/ssh-agent.env")"
 fi
 
-# keychain - re-use ssh-agent and/or gpg-agent between logins
-keychain
-
 # Colorize commands
 # Load colors with lscolors-git from AUR
 . /usr/share/LS_COLORS/dircolors.sh
@@ -31,17 +28,25 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-
-PS1='\[\e[00;34m\]\W$ \[\e[0m\]' #Show small minimal path (Blue)
-#PS1='\[\033[1;31m\]Keanue  \W\[\033[1;33m\]\$\[\033[1;00m\] '	#Show small path
-#PS1='\[\033[1;31m\]\u  $PWD\[\033[1;31m\]\$\[\033[1;00m\] '	#Show full path
-
 # 256 file enabled by default in st
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
 	export TERM='xterm-256color'
 else
 	export TERM='xterm-color'
 fi
+
+STARTCOLOR='\e[0;34m';  # Start color Blue
+ENDCOLOR='\e[0m'        # End color
+
+TIMEDATE="[\d at \t]"          # date and time
+HOSTINFO='\u@$(uname -n):\W'   # username hostname directory
+
+# username and full path
+#export PS1="$STARTCOLOR\u:\w$ENDCOLOR \$ "
+# username and small path
+export PS2="$STARTCOLOR\u:\W$ENDCOLOR \$ "
+# timedate and hostinfo
+export PS3="$STARTCOLOR$TIMEDATE\n$HOSTINFO$ENDCOLOR \$ "
 
 # Aliases file
 if [ -f ~/.bash_aliases ]; then
@@ -57,24 +62,14 @@ export PATH=$PATH:~/dotfiles/scripts
 # Add rubygems to PATH
 export PATH=$PATH:~/.gem/ruby/2.7.0/bin
 
-# Central Server
-export CENTRAL_SSH=guacadmin@10.58.247.81
+# Extra Programs
 
-# Bash Completion
-# Blash complition is installed via pacman as `bash-completion`
-#for file in /usr/local/etc/bash_completion.d/* ; do
-    #source "$file"
-#done
-
-
-# Run 'nvm use' automatically every time there's 
-# a .nvmrc file in the directory. Also, revert to default 
-# version when entering a directory without .nvmrc
+# Run 'nvm use' automatically every time there's a .nvmrc file in the directory.
+# Also, revert to default version when entering a directory without .nvmrc
 enter_directory() {
 if [[ $PWD == $PREV_PWD ]]; then
     return
 fi
-
 PREV_PWD=$PWD
 if [[ -f ".nvmrc" ]]; then
     nvm use
@@ -84,7 +79,11 @@ elif [[ $NVM_DIRTY = true ]]; then
     NVM_DIRTY=false
 fi
 }
-
 export PROMPT_COMMAND=enter_directory
-
 source /usr/share/nvm/init-nvm.sh
+
+# Bash complition is installed via pacman as `bash-completion`
+for file in /usr/share/bash-completion/completions/* ; do
+    source "$file"
+done
+

@@ -20,7 +20,7 @@ workspace_layout default
 
 # Workspace name
 set $WS0  0:Dev 
-set $WS1  1:Desktop
+set $WS1  1:Remote
 set $WS2  2:Web
 set $WS3  3:Notes
 set $WS4  4:Bash
@@ -31,7 +31,7 @@ set $WS8  8:VM
 set $WS9  9:Media
 set $WS10 10:Config
 set $WS11 11:Test
-set $WS12 12:Log
+set $WS12 12:Cloud
 
 # Switch to workspace
 bindsym $mod+grave workspace $WS0
@@ -69,7 +69,7 @@ bindsym $mod+Shift+equal move container to workspace $WS12
 
 # Borders
 new_window pixel 2
-new_float  pixel
+new_float  pixel 2
 
 # Gaps
 set $default_gaps_inner 10
