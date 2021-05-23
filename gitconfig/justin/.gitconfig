@@ -12,18 +12,18 @@
 [alias]
 	unstage = reset HEAD --
     st = status
+    br = branch
+    aa = add .
     co = checkout
     con = !"f(){ git-checkout-issue $1 $2; }; f"
     conn = !"f(){ git-checkout-issue-clickup $1 $2 $3; }; f"
-    br = branch
-    aa = add .
-	comm = commit -S -m
+	com = commit -S -m
     comn = !"f() { message=\"$(git rev-parse --abbrev-ref HEAD | cut -d '#' -f2 | cut -d '/' -f2): $1\"; git commit -S -m \"$message\"; }; f"
-    auto = !"f(){ auto-commit $1; }; f"
-	last = log -1 HEAD
-    recomm = reset --soft HEAD~1
     uncommit = reset --soft HEAD~1
+    recommit = reset --soft HEAD~1
     delete = !git stash && git drop ;:
+	last = log -1 HEAD
+    auto = !"f(){ auto-commit $1; }; f"
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
