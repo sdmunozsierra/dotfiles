@@ -189,3 +189,6 @@ makeScript(){
 
 # Chainlink
 alias chainlink='/home/munozsies/go/bin/chainlink'
+
+# colorsls
+alias lc='colorls -lA --sd'

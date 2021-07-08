@@ -1,7 +1,11 @@
-# dotfiles
+# Dotfiles
 
 Dotfiles managed with Stow.
-Offer a Raspi64 perfile that is compatible with Raspberry Pi 64 Bit Arch Linux Arm architecture.
+
+
+Offer a Mac profile.
+
+Offer a Raspi64 profile that is compatible with Raspberry Pi 64 Bit Arch Linux Arm architecture.
 
 ## Overview
 
@@ -11,10 +15,11 @@ Profiles are settings for specific devices or group of devices.
 
 ```
 Raspi64 -vim -i3
-``
+```
 
 ## Profiles
 
+Mac
 Raspi64
 Justin
 Ed
@@ -74,6 +79,12 @@ sh ./install.py --all
 ```
 
 ## Profile Specific Settings
+
+### Mac
+```
+brew install stow
+cd dotfiles
+```
 
 ### Ed
 

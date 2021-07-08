@@ -1,0 +1,34 @@
+[user]
+    name = Sergio Sierra
+    email = sergiosierra@cleta.io
+    signingkey = 1C278637E5DD4BF7
+[core]
+	editor = vim
+[credential]
+        # helper = cache --timeout=3600
+        #helper = /usr/lib/git-core/git-credential-libsecret
+[gpg]
+	program = gpg
+[commit]
+	# Show diff when preparing commit message
+	verbose = false
+[alias]
+    rs = restore --staged
+	unstage = reset HEAD --
+    st = status
+    co = checkout
+    con = !"f(){ git-checkout-issue $1 $2; }; f"
+    br = branch
+    aa = add .
+	comm = commit -S -m
+    comn = !"f() { message=\"$(git rev-parse --abbrev-ref HEAD | cut -d \"/\" -f2 | cut -d \"-\" -f1): $1\"; git commit -S -m \"$message\"; }; f"
+    auto = !"f(){ auto-commit $1; }; f"
+	last = log -1 HEAD
+    recomm = reset --soft HEAD~1
+    uncommit = reset --soft HEAD~1
+    delete = !git stash && git drop ;:
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

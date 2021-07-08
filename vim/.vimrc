@@ -26,6 +26,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tommcdo/vim-exchange'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-sneak'
+Plugin 'suan/vim-instant-markdown'
 "requires python
 "Plugin 'Valloric/YouCompleteMe'
 "run ./install.py if disconnection
@@ -50,6 +54,10 @@ Plugin 'nvie/vim-flake8'
 "Plugin 'https://github.com/pangloss/vim-javascript'
 "Plugin 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 "Plugin 'alvan/vim-closetag'
+" -- Tmux -- "
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'benmills/vimux'
 call vundle#end() 
 " To ignore plugin indent changes, instead use:
 filetype plugin indent on
@@ -81,7 +89,7 @@ set t_Co=256  "Color 256 :)
 "set termguicolors "for tmux
 let base16colorspace=256  " Access colors present in 256 colorspace
 syntax on
-colorscheme delek     "New rice comming up!
+colorscheme badwolf
 let g:spacegray_underline_search = 1
 let g:spacegray_italicize_comments = 1
 "let g:badwolf_darkgutter = 1 " Make the gutters darker than the background.
@@ -329,6 +337,33 @@ map gd :bd<cr>
     "only
   "endif
 "endfunction
+
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>"
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+
+" Open vimux pane
+map <Leader>vo :VimuxOpenPane<CR>
+
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
+"
+" Function to make tmux zoom its runner pane.
+function! VimuxZoomRunner()
+  call VimuxInspectRunner()
+  call system("tmux resize-pane -Z")
+endfunction
+
+" Zoom the runner pane (use <bind-key> z to restore runner pane)
+map <Leader>vz :call VimuxZoomRunner()<CR>
 
 "----------------------------------------
 "------------- OPTIONS ------------------
