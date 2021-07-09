@@ -16,10 +16,9 @@ antigen bundle docker-compose
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
+antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 antigen theme romkatv/powerlevel10k
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(root_indicator status kubecontext background_jobs history)
+ZSH_THEME="spaceship"
 
 # Tell Antigen that you're done.
 antigen apply
@@ -46,3 +45,8 @@ compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fpath=($fpath "/home/munozsies/.zfunctions")
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
