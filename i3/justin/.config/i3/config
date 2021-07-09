@@ -1,7 +1,7 @@
 # Justin's i3 Config File
 # Minimal lifestyle
 # Bar: i3-bar
-# Modes: Power, Rezise, Gaps, Config, Monitor
+# Modes: Power, Resize, Gaps, Config, Monitor
 
 ##############################
 ###### General Settings ######
@@ -68,12 +68,12 @@ bindsym $mod+Shift+equal move container to workspace $WS12
 ##############################
 
 # Borders
-new_window pixel 2
-new_float  pixel 2
+new_window pixel 3
+new_float  pixel 4
 
 # Gaps
-set $default_gaps_inner 10
-set $default_gaps_outer 5
+set $default_gaps_inner 20
+set $default_gaps_outer 10
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 smart_gaps on
@@ -102,7 +102,13 @@ bindsym $mod+Ctrl+Return exec ~/Data/ArchScripts/penejada.sh
 bindsym $mod+slash exec $term2
 
 # Start dmenu
-bindsym $mod+d exec --no-startup-id dmenu-recent-aliases -i -p ' ' $dmenuTheme
+set $rofi_apps ~/.config/rofi/bin/menu_apps
+set $rofi_launcher ~/.config/rofi/bin/launcher_colorful
+bindsym $mod+d exec --no-startup-id dmenu-recent-aliases -i | rofi -dmenu
+bindsym $mod+shift+t exec --no-startup-id $rofi_apps
+bindsym $mod+shift+a exec --no-startup-id $rofi_launcher
+#bindsym $mod+d exec --no-startup-id dmenu-recent-aliases -i | rofi -dmenu
+#bindsym $mod+shift+d exec --no-startup-id dmenu-recent-aliases -i -p ' ' $dmenuTheme
 
 # Autostart programs
 exec_always --no-startup-id picom --experimental-backends --backend glx
